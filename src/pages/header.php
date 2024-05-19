@@ -2,7 +2,7 @@
   <div class="h-[70px] flex justify-between px-6 header__inner">
     <div class="left flex items-center">
       <img class="logo_header max-w-[200px] max-h-[70px] ml-10 mr-12" 
-        src="../images/logo-1.png" alt="Logo" />
+        src="images/logo-1.png" alt="Logo" />
     </div>
     <div class="middle flex items-center">
       <ul class="flex justify-between items-center list__menu">
@@ -31,8 +31,8 @@
       </div>
     </div>
     <div class="flex items-center justify-between gap-5 right">
-      <input class="w-[100px] h-10 rounded-3xl bg-[#faf2c8]" type="submit" value="Đăng nhập">
-      <input class="w-[100px] h-10 rounded-3xl bg-[#474747] text-white" type="submit" value="Đăng ký">
+      <input class="w-[120px] h-10 rounded-3xl border-2 border-red-500 text-red-500 font-bold cursor-pointer" type="submit" value="Đăng nhập">
+      <input class="w-[120px] h-10 rounded-3xl bg-[#ED2224] text-white font-bold cursor-pointer" type="submit" value="Đăng ký">
     </div>
   </div>
 </div>
