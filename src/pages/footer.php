@@ -9,7 +9,7 @@
           <img
             width="80px"
             height="80px"
-            src="../../assets/imgs/logo-tron.png"
+            src="images/square_logo.png"
             alt="logo"
           />
           <span class="uppercase text-[#9F2D2D] font-semibold"
@@ -40,18 +40,18 @@
           <div class="pt-[14px] flex gap-3">
             <img
               width="40"
-              src="../images/Facebook_Logo.png"
+              src="images/Facebook_Logo.png"
               alt=""
             />
             <img
               width="40"
-              src="../images/Instagram_logo.png"
+              src="images/Instagram_logo.png"
               alt=""
             />
             <img
               width="50"
               height="34"
-              src="../images/Youtube_logo.png"
+              src="images/Youtube_logo.png"
               alt=""
             />
           </div>
