@@ -25,14 +25,14 @@
         </li>
         <li class="p-[23px] cursor-pointer">LIÊN HỆ</li>
       </ul>
-      <div class="flex mx-5 p-[23px]">
-        <input class="border-solid border-2 border-red-300 rounded-2xl indent-4" 
+      <div class="flex p-[23px]">
+        <input class="border-solid border-2 border-red-400 rounded-2xl indent-4" 
           type="text" name="search" id="search" placeholder="Tìm kiếm...">
       </div>
     </div>
     <div class="flex items-center justify-between gap-5 right">
-      <input class="w-[120px] h-10 rounded-3xl border-2 border-red-500 text-red-500 font-bold cursor-pointer" type="submit" value="Đăng nhập">
-      <input class="w-[120px] h-10 rounded-3xl bg-[#ED2224] text-white font-bold cursor-pointer" type="submit" value="Đăng ký">
+      <input class="w-[110px] h-10 rounded-3xl border-2 border-red-500 text-red-500 font-semibold cursor-pointer" type="submit" value="Đăng nhập">
+      <input class="w-[110px] h-10 rounded-3xl bg-[#ED2224] text-white font-semibold cursor-pointer" type="submit" value="Đăng ký">
     </div>
   </div>
 </div>
