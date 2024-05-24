@@ -1,3 +1,6 @@
+<?php
+ 
+?>
 <div class="header flex w-full">
   <div class="h-[70px] flex justify-between px-6 header__inner">
     <div class="left flex items-center">
@@ -10,17 +13,35 @@
         <li class="p-[23px] cursor-pointer">
           <a href="">BÁNH SINH NHẬT <i class="fa fa-caret-down"></i></a>
           <ul class="sub__menu list-none shadow-lg">
-            <li><a href="">Bento cake</a></li>
-            <li><a href="">Bánh sự kiện</a></li>
-            <li><a href="">Bánh kem tươi - Socola</a></li>
+           <?php          
+           $sql_danhmuc1= "SELECT * FROM category WHERE id<13 ";
+           $query_danhmuc1=mysqli_query($connect,$sql_danhmuc1);
+           while($row_danhmuc1=mysqli_fetch_array($query_danhmuc1)){
+
+           ?>
+              <li> <a href="index.php?quanly=danhmuc&id=<?php echo $row_danhmuc1['id'] ?>"><?php echo $row_danhmuc1['name']?></a></li>
+
+           <?php
+               }
+
+           ?>
           </ul>
         </li>
         <li class="p-[23px] cursor-pointer">
           <a href="">SẢN PHẨM KHÁC <i class="fa fa-caret-down"></i></a>
           <ul class="sub__menu list-none shadow-lg">
-            <li><a href="">Cookies - Macaron</a></li>
-            <li><a href="">Bánh mochi</a></li>
-            <li><a href="">Pana cotta</a></li>
+          <?php          
+           $sql_danhmuc2= "SELECT * FROM category WHERE id>12 ";
+           $query_danhmuc2=mysqli_query($connect,$sql_danhmuc2);
+           while($row_danhmuc2=mysqli_fetch_array($query_danhmuc2)){
+
+           ?>
+              <li> <a href="index.php?quanly=danhmuc&id=<?php echo $row_danhmuc2['id'] ?>"><?php echo $row_danhmuc2['name']?></a></li>
+
+           <?php
+               }
+
+           ?>
           </ul>
         </li>
         <li class="p-[23px] cursor-pointer">LIÊN HỆ</li>
