@@ -13,9 +13,12 @@
 <body>
   <div class="wrapper">
     <?php
-      include("pages/header.php");
-      include("pages/banner.php");
+      // include("pages/header.php");
+      include("pages/headerafterlogin.php");
+      include("admincp/config/connect.php");
       include("pages/main.php");
+      // include("pages/main/about.php");
+      // include("pages/main/contact.php");
       include("pages/footer.php");
     ?>
 
