@@ -30,7 +30,7 @@
             <a href="index.php?page=about">VỀ THE CAKE HOUSE</a>
           </li>
           <li class="p-[23px] cursor-pointer">
-            <a href="">BÁNH SINH NHẬT <i class="fa fa-caret-down"></i></a>
+            <a href="index.php?page=category&id=10">BÁNH SINH NHẬT <i class="fa fa-caret-down"></i></a>
             <ul class="sub__menu list-none shadow-lg">
               <?php
                 while ($row_danhmuc1 = mysqli_fetch_array($query_danhmuc1)) {
@@ -42,7 +42,7 @@
             </ul>
           </li>
           <li class="p-[23px] cursor-pointer">
-            <a href="">SẢN PHẨM KHÁC <i class="fa fa-caret-down"></i></a>
+            <a href="index.php?page=category&id=13">SẢN PHẨM KHÁC <i class="fa fa-caret-down"></i></a>
             <ul class="sub__menu list-none shadow-lg">
               <?php
                 while ($row_danhmuc2 = mysqli_fetch_array($query_danhmuc2)) {
