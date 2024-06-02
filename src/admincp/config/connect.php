@@ -1,12 +1,15 @@
-<?php
-    $severname="localhost";
-    $username="root";
-    $password="12345678";
-    $database="cake-house";
+<?php 
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$database = "cake-house";
 
-    $connect= new mysqli($severname,$username,$password,$database);
-    if(mysqli_connect_errno()){
-        echo "loi ket noi".mysqli_connect_error();
-        exit();
-    }
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $database);
+	
+	// Check connection
+	if ($conn->connect_errno) {
+	  echo "Lỗi kết nối: ".$conn->connect_error;
+	  exit();
+	}
 ?>

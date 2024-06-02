@@ -60,7 +60,7 @@ li:hover ul.sub__menu {
 }
 
 .sub__menu li a{
-  padding: 5px;
+  padding: 10px 5px;
 }
 
 .home__container {
@@ -87,4 +87,36 @@ li:hover ul.sub__menu {
 .product__list li:hover{
   box-shadow: rgba(17, 17, 26, 0.1) 1px 1px 10px 4px;
   transform: scale(1.05);
+}
+
+.entry__content p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.menu__user {
+  position: relative;
+}
+
+.submenu__user {
+  background: #fff;
+  color: #000;
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  z-index: 1;
+  border-top: 2px solid #ee2c2e;
+  right: 0;
+  align-content: center;
+  padding: 0 10px;
+}
+
+ul.submenu__user li {
+  padding: 10px 5px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.menu__user:hover .submenu__user{
+  opacity: 1;
+  visibility: visible;
 }
