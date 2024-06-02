@@ -18,7 +18,6 @@
       include("pages/main.php");
       include("pages/footer.php");
     ?>
-
   </div>
 </body>
 
