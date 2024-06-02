@@ -1,3 +1,6 @@
+<?php
+  include("pages/banner.php");
+?>
 
 <div class="home__content w-full">
   <!-- Bento cake -->

@@ -8,6 +8,13 @@
         $page = '';
       }
 
+      if(isset($_GET['search_key'])){
+        $check = true;
+      }
+      else{
+        $check = false;
+      }
+
       if($page=='about'){
         include("pages/main/about.php");
       }
@@ -15,8 +22,10 @@
         include("pages/main/index.php");
       }
       else if($page=='contact'){
-        
         include("pages/main/contact.php");
+      }
+      else if($check == true){
+        include("pages/main/search.php");
       }
       else {
         include("pages/main/index.php");

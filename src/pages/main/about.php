@@ -6,7 +6,7 @@
     <div class="about__container">
       <div class="breadcrumb flex list-none py-2">
         <span class="font-medium">
-          <a href="index.php?page=home"><i class="fa-solid fa-house"></i> Trang chủ <i class="fa-solid fa-angles-right text-sm"></i></a>
+          <a href="index.php?page=home"><i class="fa-solid fa-house"></i> Trang chủ <i class="fa-solid fa-angles-right scale-75"></i></a>
           Về The Cake House
         </span>
       </div>

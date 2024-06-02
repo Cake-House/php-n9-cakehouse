@@ -15,6 +15,10 @@
       margin: 10px 0;
       text-indent: 0.75rem;
     }
+
+    input:required i{
+      border-color: red !important;
+    }
     
     textarea {
       border: solid 1px #424242;
@@ -33,12 +37,13 @@
     <div class="__left p-10"> 
       <div class="">
         <p class="text-xl text-[#7a8726]"><i class="fa-regular fa-paper-plane"></i> Để lại lời nhắn</p>
-        <form action="" method="post" class="contact__form">
-          <input type="text" name="fullname" placeholder="Tên của bạn" value=""><br>
-          <input type="email" name="email" placeholder="Email của bạn" value=""><br>
+        <form autocomplete="on" action="./pages/main/sendmess.php" method="post" class="contact__form">
+          <input type="text" name="fullname" placeholder="Tên của bạn" value="" required><br>
+          <input type="email" name="email" placeholder="Email của bạn" value="" required><br>
           <input type="text" name="phone" placeholder="Số điện thoại của bạn" value=""><br>
           <textarea class="w-[620px] h-[200px]" name="content" placeholder="Nội dung"></textarea><br>
-          <input class="w-[110px] h-10 rounded-3xl  bg-[#1acf86] text-white font-semibold cursor-pointer" type="submit" value="Gửi">
+          <input class="w-[110px] h-10 rounded-3xl  bg-[#1acf86] text-white font-semibold cursor-pointer" 
+            type="submit" name="btn_send" value="Gửi">
         </form>
       </div>
     </div>
@@ -53,3 +58,9 @@
     </div>
   </body>
 </html>
+
+<!-- <script>
+  function message() {
+    alert("Lời nhắn của bạn đã được ghi lại !");
+  }
+</script> -->
