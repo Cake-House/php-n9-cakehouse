@@ -13,12 +13,11 @@
 <body>
   <div class="wrapper">
     <?php
-      include("pages/header.php");
-      include("pages/banner.php");
+      include("admincp/config/connect.php");
+      include("pages/headerafterlogin.php");
       include("pages/main.php");
       include("pages/footer.php");
     ?>
-
   </div>
 </body>
 
