@@ -1,0 +1,15 @@
+.registration {
+    background-image: url("../../images/bg_admin.jpg");
+    background-size: cover;
+    background-position: bottom;
+}
+
+.side_menu_sub {
+    color: rgba(222, 221, 221, 0.848);
+    line-height: 45px;
+    font-weight: normal;
+}
+.side_menu_sub:hover {
+    /* background-color: red; */
+    color: white;
+}

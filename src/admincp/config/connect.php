@@ -12,4 +12,3 @@
 	  echo "Lỗi kết nối: ".$conn->connect_error;
 	  exit();
 	}
-?>
