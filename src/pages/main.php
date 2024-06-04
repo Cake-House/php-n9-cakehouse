@@ -24,6 +24,15 @@
       else if($page=='contact'){
         include("pages/main/contact.php");
       }
+      else if($page=='user-info'){
+        include("pages/account/user-info.php");
+      }
+      else if($page=='user-account'){
+        include("pages/account/user-account.php");
+      }
+      else if($page=='reset-password'){
+        include("pages/account/reset-password.php");
+      }
       else if($check == true){
         include("pages/main/search.php");
       }
