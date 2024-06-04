@@ -61,22 +61,7 @@
   $sql_info = "SELECT * FROM user WHERE id='$id' LIMIT 1";
   $query_info = mysqli_query($conn, $sql_info);
   $info = mysqli_fetch_array($query_info);
-  if(isset($_POST['btn_update'])){
-    $fullname = $_POST['u_fullname'];
-    $phone = $_POST['u_phone'];
-    $addr = $_POST['u_addr'];
-    // $avt = $_POST['img_avt'];
-    $sql_info = "SELECT * FROM user WHERE id='$id' LIMIT 1";
-    $query_info = mysqli_query($conn, $sql_info);
-    $count = mysqli_num_rows($query_info);
-    if($count>0){
-      $sql_update = "UPDATE user SET fullname='$fullname', phone='$phone', address='$addr' WHERE id='$id' ";
-      echo '<script>alert("Thông tin cá nhân đã được thay đổi!");</script>';
-      // header("Location:../../index.php?page=user-account&id");
-    }else{
-      echo '<script>alert("Mật khẩu cũ không đúng, vui lòng nhập lại!");</script>';
-    }
-  } 
+  
 ?>
 <body>
   <div class="h-[640px] py-5 px-10 flex justify-start">
@@ -90,9 +75,9 @@
     </div>
     <div class="__right px-10 w-full"> 
       <p class="text-xl uppercase py-3"><i class="fa-regular fa-address-book"></i> Thông tin cá nhân</p>
-      <div class="grid grid-cols-2">
-        <div class="py-[10px]">
-          <form autocomplete="off" action="" method="post" class="userinfo__form">
+      <form autocomplete="off" action="pages/account/info.php?id=<?php echo $id?>" method="post" enctype="multipart/form-data" class="userinfo__form">
+        <div class="grid grid-cols-2">
+          <div class="py-[10px] col-span-1">
             <label for="u_fullname">Họ và tên</label><br>
             <input type="text" name="u_fullname" value="<?php echo $info['fullname'] ?>"><br>
             <label for="u_phone">Số điện thoại</label><br>
@@ -101,14 +86,14 @@
             <input type="text" name="u_addr" value="<?php echo $info['address'] ?>"><br>
             <input class="w-[110px] h-10 my-[10px] rounded-3xl  bg-[#1acf86] text-white font-semibold cursor-pointer" 
               type="submit" name="btn_update" value="Cập nhật">
-          </form>
-        </div>
-        <div class="mt-5">
-          <img src="<?php echo $info['avatar']?>" 
-            alt="Avatar" class="w-[180px] h[180px]" id="pre_img">
+          </div>
+          <div class="mt-5">
+            <img src="./images/<?php echo $info['avatar']?>" 
+              alt="Avatar" class="w-[180px] h[180px]" id="pre_img">
             <input class="py-3" type="file" name="img_avt" id="img_avt">
+          </div>
         </div>
-      </div>
+      </form>
     </div>
     </div>
   </body>

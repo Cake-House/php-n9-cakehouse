@@ -79,7 +79,7 @@
         <!-- menu user -->
         <div onclick="show_menu()" class="menu__user w-[100px] flex justify-end cursor-pointer">
           <div class="flex justify-center">
-            <img src="<?php echo $info['avatar']?>" alt="Avatar" class="avatar">
+            <img src="./images/<?php echo $info['avatar']?>" alt="Avatar" class="avatar">
             <i class="fa-solid fa-caret-down px-[8px] py-[16px]"></i>
           </div>
           <ul id="submenu_user" class="submenu__user list-none shadow-lg w-[200px] top-[60px] rounded-b-md">

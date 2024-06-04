@@ -71,7 +71,7 @@
       if($count>0){
         $sql_update = mysqli_query($conn,"UPDATE user SET password='$newpass' WHERE id='$id' ");
         echo '<script>alert("Mật khẩu đã được thay đổi!");</script>';
-        // header("Location:../../index.php?page=user-account&id");
+        // header("Location:../../index.php?page=user-account&id=$id");
       }else{
         echo '<script>alert("Mật khẩu cũ không đúng, vui lòng nhập lại!");</script>';
       }
@@ -89,7 +89,7 @@
       </ul>
     </div>
     <div class="__right px-10 w-full"> 
-      <p class="pagetitle text-xl uppercase py-3"></i> Đổi mật khẩu</p>
+      <p class="pagetitle text-xl uppercase py-3">Đổi mật khẩu</p>
       <div class="grid grid-cols-2">
         <div class="py-[10px]">
           <form action="" method="post" class="useracc__form">
