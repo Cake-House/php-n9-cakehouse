@@ -1,40 +1,40 @@
 <style>
-  .sidebar li:hover{
-    background-color: #fffada;
-    color: #ee2c2e;
-  }
+    .sidebar li:hover{
+      background-color: #fffada;
+      color: #ee2c2e;
+    }
 
-  .sidebar li {
-    border-right: #e0e0e0 1px solid;
-    border-left: #e0e0e0 1px solid;
-    border-bottom: #e0e0e0 1px solid;
-  }
-  
-  ul.list_trang li {
-    float: left;
-    padding: 4px 12px;
-    margin: 5px;
-    background-color: #fff;
-    display: block;
-    border: 1px solid #d3ced2;
-    border-radius: 20px;
-  }
+    .sidebar li {
+      border-right: #e0e0e0 1px solid;
+      border-left: #e0e0e0 1px solid;
+      border-bottom: #e0e0e0 1px solid;
+    }
+    
+    ul.list_trang li {
+      float: left;
+      padding: 4px 12px;
+      margin: 5px;
+      background-color: #fff;
+      display: block;
+      border: 1px solid #d3ced2;
+      border-radius: 20px;
+    }
 
-  ul.list_trang li:hover {
-    background: #ee2c2e;
-  }
+    ul.list_trang li:hover {
+      background: #ee2c2e;
+    }
 
-  ul.list_trang li:hover a {
-    color: #fff;
-  }
+    ul.list_trang li:hover a {
+      color: #fff;
+    }
 
-  ul.list_trang li a {
-    color: #d3ced2;
-    text-align: center;
-    text-decoration: none;
-  }
+    ul.list_trang li a {
+      color: #d3ced2;
+      text-align: center;
+      text-decoration: none;
+    }
 
-</style>
+  </style>
 <?php
  include("admincp/config/connect.php");
 $sql_show = "SELECT * FROM product WHERE product.category_id ='$_GET[id]' ORDER BY id DESC ";
@@ -43,12 +43,18 @@ $query_show= mysqli_query($conn, $sql_show);
 $sql_cate = "SELECT * FROM category WHERE id ='$_GET[id]' LIMIT 1 ";
 $query_cate =mysqli_query($conn,$sql_cate);
 $row_title =mysqli_fetch_array($query_cate);
+
+$sql_category = "SELECT * FROM category ";
+$query_category =mysqli_query($conn,$sql_category);
 ?>
 
-<div class="main w-full">
+<div class="content w-full">
   <!-- Bento cake -->
-  <div class="home__container py-[45px]">
-    <div class="flex justify-center items-center mb-[30px]">
+  <div>
+      <img src="https://origato.com.vn/wp-content/themes/3btheme/lib/images/bg-ar.png" alt="">
+    </div>
+  <div class="">
+    <div class="home__container py-[45px] flex justify-center items-center mb-[30px]">
       <h2 >
       <?php 
             if(isset($row_title['name'])){
@@ -58,6 +64,22 @@ $row_title =mysqli_fetch_array($query_cate);
             }
     ?>
       </h2>
+      </div>
+      <div class="py-[45px] grid grid-cols-5">
+      <div class="sidebar flex justify-end ">
+        <ul class="w-[240px] ">
+          <h2 class="uppercase font-semibold rounded-t-md bg-[#ee2c2e] p-3 text-white text-center">danh mục bánh</h2>
+          <?php
+            while ($row_cate = mysqli_fetch_array($query_category)) {
+          ?>
+            <li class="px-[10px] py-[8px] ">
+              <i class="fa-solid fa-chevron-right scale-50"></i>
+              <a href="index.php?page=category&id=<?php echo $row_cate['id'] ?>"><?php echo $row_cate['name']?></a>
+            </li>
+          <?php  
+            }
+          ?>
+        </ul>
       </div>
       <div class="col-span-4">
         <ul class="product__list flex justify-center mb-6">
@@ -95,8 +117,7 @@ $row_title =mysqli_fetch_array($query_cate);
             ?>
           </ul>
         </div>
-                   
-</ul>
+        </div>
     </div>
     <div>
     
