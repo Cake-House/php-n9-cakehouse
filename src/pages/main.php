@@ -23,6 +23,8 @@
       }
       else if($page=='contact'){
         include("pages/main/contact.php");
+      }else if($page=='category'){
+        include("pages/danhMuc.php");
       }
       else if($check == true){
         include("pages/main/search.php");

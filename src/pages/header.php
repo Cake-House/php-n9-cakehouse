@@ -23,7 +23,7 @@
            while($row_danhmuc1=mysqli_fetch_array($query_danhmuc1)){
 
            ?>
-              <li> <a href="index.php?quanly=danhmuc&id=<?php echo $row_danhmuc1['id'] ?>"><?php echo $row_danhmuc1['name']?></a></li>
+              <li> <a href="index.php?page=category&id=<?php echo $row_danhmuc1['id'] ?>"><?php echo $row_danhmuc1['name']?></a></li>
 
            <?php
                }
@@ -40,7 +40,7 @@
            while($row_danhmuc2=mysqli_fetch_array($query_danhmuc2)){
 
            ?>
-              <li> <a href="index.php?quanly=danhmuc&id=<?php echo $row_danhmuc2['id'] ?>"><?php echo $row_danhmuc2['name']?></a></li>
+              <li> <a href="index.php?page=category&id=<?php echo $row_danhmuc2['id'] ?>"><?php echo $row_danhmuc2['name']?></a></li>
 
            <?php
                }

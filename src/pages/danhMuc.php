@@ -28,7 +28,7 @@ $row_title =mysqli_fetch_array($query_cate);
     ?>
                     <li> 
                     <div class="text-center mb-[30px]">
-                        <a href="index.php?quanly=sanpham&id=<?php echo $row_pro['id'] ?>">
+                        <a href="index.php?page=sanpham&id=<?php echo $row_pro['id'] ?>">
                             <img class="w-[255px] h-[255px]" src="<?php echo $row_pro['thumbnail'] ?>" alt="">
                             <p class="uppercase font-semibold min-h-[50px] my-2"><?php echo $row_pro['title'] ?></p>
                             <p><?php echo number_format($row_pro['price'],0,',','.').' đ' ?></p>
