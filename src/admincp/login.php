@@ -12,7 +12,7 @@ if (isset($_POST['nhap'])) {
     mysqli_stmt_bind_param($stmt, "ss", $taikhoan, $matkhau);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
-    $count = mysqli_num_rows($result);  
+    $count = mysqli_num_rows($result);
 
     if ($count > 0) {
         $row = $result->fetch_assoc();
@@ -41,7 +41,7 @@ if (isset($_POST['nhap'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- css -->
-    <link rel="stylesheet" href="../admincp/css/login_css.css">
+    <link rel="stylesheet" href="css/login_css.css">
     <title>Admin Login</title>
 </head>
 
@@ -70,7 +70,7 @@ if (isset($_POST['nhap'])) {
                         type="submit" name="nhap" value="Đăng nhập">
                 </div>
                 <div class="mt-3">
-                    <p class="font-light text-[14px] text-[#8B475D]"><a href="../../index.php">Về trang chủ</a></p>
+                    <p class="font-light text-[14px] text-[#8B475D]"><a href="../index.php">Về trang chủ</a></p>
                 </div>
             </form>
         </div>
