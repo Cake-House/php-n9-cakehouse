@@ -1,7 +1,7 @@
 <?php 
 	$servername = "localhost";
 	$username = "root";
-	$password = "12345678";
+	$password = "";
 	$database = "cake-house";
 
 	// Create connection
