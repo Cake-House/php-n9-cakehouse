@@ -1,6 +1,6 @@
 
-<table border=1>
-    <caption>Thêm danh mục</caption>
+<table border=1 class="mt-5 ml-5 h-[150px]">
+    <caption class="text-[30px] font-medium mb-5">Thêm danh mục</caption>
     <form
         action="modules/quanlydanhmuc/xuly.php"
         method="post">
@@ -15,7 +15,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" name="themdanhmuc" value="Thêm danh mục"></td>
+            <td class="text-center t-5 w-[50px] bg-gray-400 rounded-2xl"><input type="submit" name="themdanhmuc" value="Thêm danh mục"></td>
         </tr>
     </form>
 </table>

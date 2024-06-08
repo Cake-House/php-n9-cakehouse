@@ -16,8 +16,8 @@ if (isset($_GET['idsanpham'])) {
 }
 ?>
 
-<table border=1>
-    <caption>Sửa sản phẩm</caption>
+<table border=1 class="mt-5 ml-5 h-[600px]">
+    <caption class="text-[30px] font-medium mb-5">Sửa sản phẩm</caption>
     <form
         action="modules/quanlysanpham/xuly.php?idsanpham=<?php echo $row['id'] ?>"
         method="post" enctype="multipart/form-data">
@@ -79,7 +79,7 @@ while ($row_danhmuc = mysqli_fetch_array($query_danhmuc)) {
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" name="suasanpham" value="Sửa sản phẩm"></td>
+            <td class="text-center p-2 t-5 w-[50px] bg-gray-400 rounded-2xl"><input type="submit" name="suasanpham" value="Sửa sản phẩm"></td>
         </tr>
     </form>
 </table>

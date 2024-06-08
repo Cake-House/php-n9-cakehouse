@@ -1,6 +1,6 @@
 
-<table border=1>
-    <caption>Quản lý Feedback</caption>
+<table border=1 class="mt-5 ml-5 h-[100px]">
+    <caption class="text-[30px] font-medium mb-5">Quản lý Feedback</caption>
     <tr>
         <th>ID</th>
         <th>Fullname</th>

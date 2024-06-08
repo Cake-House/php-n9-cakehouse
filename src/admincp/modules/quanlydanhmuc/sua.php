@@ -16,8 +16,8 @@ if (isset($_GET['iddanhmuc'])) {
 }
 ?>
 
-<table border=1>
-    <caption>Sửa danh mục</caption>
+<table border=1 class="mt-5 ml-5 h-[150px]">
+    <caption class="text-[30px] font-medium mb-5">Sửa danh mục</caption>
     <form
         action="modules/quanlydanhmuc/xuly.php?iddanhmuc=<?php echo $row['id'] ?>"
         method="post">
@@ -32,7 +32,7 @@ if (isset($_GET['iddanhmuc'])) {
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" name="suadanhmuc" value="Sửa danh mục"></td>
+            <td class="text-center t-5 w-[50px] bg-gray-400 rounded-2xl" ><input type="submit" name="suadanhmuc" value="Sửa danh mục"></td>
         </tr>
     </form>
 </table>

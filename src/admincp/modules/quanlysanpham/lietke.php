@@ -1,5 +1,5 @@
-<table border=1>
-    <caption>Quản lý sản phẩm</caption>
+<table border=1 class="mt-5 ml-5 h-[100px]">
+    <caption class="text-[30px] font-medium mb-5">Quản lý sản phẩm</caption>
     <tr>
         <th>PRODUCT</th>
         <th>CATEGORY</th>
@@ -26,8 +26,8 @@
             <td><?php echo $row['created_at'] ?></td>
             <td><?php echo $row['updated_at'] ?></td>
 
-            <td><a href="modules/quanlysanpham/xuly.php?action=delete&idsanpham=<?php echo $row['id'] ?>">Xoá</a></td>
-            <td><a href="index.php?action=quanlysanpham&query=sua&idsanpham=<?php echo $row['id'] ?>">Sửa</a></td>
+            <td><a class="p-3 bg-red-400 rounded-2xl" href="modules/quanlysanpham/xuly.php?action=delete&idsanpham=<?php echo $row['id'] ?>">Xoá</a></td>
+            <td><a class="p-3 bg-gray-400 rounded-2xl" href="index.php?action=quanlysanpham&query=sua&idsanpham=<?php echo $row['id'] ?>">Sửa</a></td>
         </tr>
     <?php
     }

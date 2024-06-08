@@ -1,7 +1,7 @@
 
-<table border=1>
-    <caption>Quản lý tài khoản</caption>
-    <tr>
+<table border=1 class="mt-5 ml-5 h-[100px]">
+    <caption class="text-[30px] font-medium mb-5">Quản lý tài khoản</caption>
+    <tr class="mb-5">
         <th>ID</th>
         <th>FullName</th>
         <th>Avatar</th>
@@ -27,8 +27,8 @@
         <td><?php echo $row['password'] ?></td>
         <td><?php echo $row['name'] ?></td>
 
-        <td><a href="modules/quanlytaikhoan/xuly.php?action=delete&idtaikhoan=<?php echo $row['id'] ?>">Xoá</a></td>
-        <td><a href="index.php?action=quanlytaikhoan&query=sua&idtaikhoan=<?php echo $row['id'] ?>">Sửa</a></td>
+        <td><a class="p-3 bg-red-400 rounded-2xl" href="modules/quanlytaikhoan/xuly.php?action=delete&idtaikhoan=<?php echo $row['id'] ?>">Xoá</a></td>
+        <td><a class="p-3 bg-gray-400 rounded-2xl" href="index.php?action=quanlytaikhoan&query=sua&idtaikhoan=<?php echo $row['id'] ?>">Sửa</a></td>
 
     <?php
     }
