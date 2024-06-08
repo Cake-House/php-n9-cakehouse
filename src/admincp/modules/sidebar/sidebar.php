@@ -1,4 +1,4 @@
-<div class="side_menu w-[250px] h-full p-[20px] bg-[#263544]">
+<div class="side_menu w-[250px] h-screen  p-[20px] bg-[#263544]">
     <div class="side_menu_sub flex cursor-pointer">
         <a class="flex" href="index.php?action=quanlytaikhoan&query=lietke">
         <div class="w-[180px] flex">
