@@ -177,7 +177,7 @@
             </div>
             <div class="section">
                 <h2>3 Thông tin giỏ hàng</h2>
-                <p>Sản phẩm: Mẫu váy mùa hè - 16 cm x 1</p>
+                <p>Sản phẩm: Mochi kem việt quất - 16 cm x 1</p>
                 <p>Tạm tính: 290.000 đ</p>
                 <div class="radio-group">
                     <input type="radio" id="cod" name="payment" value="cod">
