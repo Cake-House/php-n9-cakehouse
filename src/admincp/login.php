@@ -4,7 +4,7 @@ include('config/connect.php');
 
 if (isset($_POST['nhap'])) {
     $taikhoan = $_POST['name'];
-    $matkhau = $_POST['pass'];
+    $matkhau = md5($_POST['pass']);
 
     // Prepare and execute the SQL statement
     $sql_ngdung = "SELECT user.id, user.fullname FROM user WHERE (user.phone = ? AND user.password = ? AND user.role_id = 1) LIMIT 1";
