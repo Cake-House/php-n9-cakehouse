@@ -44,7 +44,29 @@ if (isset($_POST['suasanpham'])) {
         echo "Failed to update database.";
     }
 }
-if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['idsanpham'])) {
+elseif (isset($_POST['themsanpham'])) {
+    // Handle image upload
+    if (!empty($hinhanh)) {
+        if (move_uploaded_file($hinhanh_tmp, 'uploads/' . $new_hinhanh)) {
+            // Insert product with image
+            $sql_insert = "INSERT INTO product (title, price, thumbnail, description, created_at, updated_at, category_id) VALUES ('$title', '$price', '$new_hinhanh', '$description', '$created_at', '$updated_at', '$danhmuc_role')";
+        } else {
+            echo "Failed to upload image.";
+            exit();
+        }
+    } else {
+        // Insert product without image
+        $sql_insert = "INSERT INTO product (title, price, description, created_at, updated_at, category_id) VALUES ('$title', '$price', '$description', '$created_at', '$updated_at', '$danhmuc_role')";
+    }
+
+    // Execute insert query
+    if (mysqli_query($conn, $sql_insert)) {
+        header('Location:../../index.php?action=quanlysanpham&query=lietke');
+    } else {
+        echo "Failed to insert data.";
+    }
+}
+else if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['idsanpham'])) {
     $id = mysqli_real_escape_string($conn, $_GET['idsanpham']);
 
     // Get old image

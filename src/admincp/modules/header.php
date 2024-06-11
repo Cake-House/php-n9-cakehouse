@@ -4,7 +4,9 @@ include('config/connect.php');
 <div class="header flex flex-col w-full">
   <div class="h-[70px] flex justify-between px-6 header__inner border-2 border-b-[#B5B5B5] shadow-sm shadow-[#B5B5B5]">
     <div class="left flex items-center">
-      <img class="logo_header max-w-[200px] max-h-[70px] mr-12" src="../images/logo-1.png" alt="Logo" />
+      <a class="flex" href="../index.php">
+        <img class="logo_header max-w-[200px] max-h-[70px] mr-12" src="../images/logo-1.png" alt="Logo" />
+      </a>
     </div>
     <div class="right relative flex items-center cursor-default">
       <div class="flex">
