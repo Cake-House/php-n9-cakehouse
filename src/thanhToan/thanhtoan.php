@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Thanh Toán Giỏ Hàng</title>
     <style>
         body {
@@ -156,14 +157,15 @@
     <div class="flechaSteps paso4"></div>
   </div>
 </div>
-        <div class="content">
+       <form action="momo.php" method="post">
+       <div class="content">
             <div class="section">
                 <h2>1 Thông tin hóa đơn</h2>
-                <label for="name">Tên *</label>
+                <label for="name">Tên </label>
                 <input type="text" id="name" name="name">
                 <label for="address">Địa chỉ</label>
                 <input type="text" id="address" name="address">
-                <label for="phone">Số điện thoại *</label>
+                <label for="phone">Số điện thoại </label>
                 <input type="text" id="phone" name="phone">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email">
@@ -171,23 +173,22 @@
                 <textarea id="note" name="note" rows="4"></textarea>
             </div>
             <div class="section">
-                <h2>2 Phương thức thanh toán</h2>
-                <p>Chuyển khoản ngân hàng</p>
-                <p>Chuyển khoản sau khi có nhân viên gọi xác nhận và hướng dẫn thủ tục chuyển khoản</p>
-            </div>
-            <div class="section">
-                <h2>3 Thông tin giỏ hàng</h2>
+            <h2> 2 Thông tin giỏ hàng</h2>
                 <p>Sản phẩm: Mochi kem việt quất - 16 cm x 1</p>
                 <p>Tạm tính: 290.000 đ</p>
-                <div class="radio-group">
-                    <input type="radio" id="cod" name="payment" value="cod">
-                    <label for="cod">Thanh toán tại cửa hàng</label>
-                </div>
                 <p>Giao hàng: 30.000 đ</p>
                 <p class="total">290.000 đ</p>
-                <button class="btn">ĐẶT HÀNG NGAY</button>
+            </div>
+            <div class="section">
+                
+                <button type="submit" name="cod" class="btn">THANH TOÁN KHI NHẬN HÀNG</button>
+                <br>
+                <button type="submit" name="payUrl" class="btn">THANH TOÁN MOMO</button>
+
+                
             </div>
         </div>
+       </form>
     </div>
 </body>
 </html>
