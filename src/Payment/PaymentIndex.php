@@ -189,7 +189,7 @@
             <div class="section">
                 <button class="btn" name="payUrl" type="submit">Thanh toán qua MOMO</button>
                 <br>
-                <a href="index.php?page=paymentdone" class="btn">Thanh toán tại cửa hàng</a>
+                <a href="index.php?page=paymentdone" class="btn">Thanh toán khi nhận hàng</a>
     
             </div>
         </div>
