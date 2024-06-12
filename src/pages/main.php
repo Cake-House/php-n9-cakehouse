@@ -38,9 +38,11 @@
       }
       else if($page=='reset-password'){
         include("pages/account/reset-password.php");
-      }else if($page =='payment'){
+      }
+      else if($page =='payment'){
         include("Payment/PaymentIndex.php");
-      }else if($page =='paymentdone'){
+      }
+      else if($page =='paymentdone'){
         include("Payment/PaymentDone.php");
       }
       else if($check == true){

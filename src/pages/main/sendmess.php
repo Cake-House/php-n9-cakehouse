@@ -1,5 +1,5 @@
 <?php
-include("../../admincp/config/connect.php");
+  include("../../admincp/config/connect.php");
 
   $fullname = $_POST['fullname'];
   $email = $_POST['email'];

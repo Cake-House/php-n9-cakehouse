@@ -10,6 +10,13 @@
     font-weight: normal;
 }
 .side_menu_sub:hover {
-    /* background-color: red; */
     color: white;
+}
+
+.logout {
+    display: none; /* Initially hide the logout button */
+}
+
+.right:hover .logout {
+    display: block; /* Show the logout button when hovering over the right side */
 }
