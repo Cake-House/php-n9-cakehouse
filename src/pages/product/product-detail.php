@@ -115,7 +115,7 @@ $related_row = mysqli_fetch_array($related_query);
             </div>
             <div class="cart">
                 <input type="number" value="1" min="1">
-                <button>THÊM VÀO GIỎ HÀNG</button>
+                <a href="index.php?page=payment&id=<?php echo $related_row['id'] ?>"><button>THÊM VÀO GIỎ HÀNG</button></a>
             </div>
         </div>
     </div>
