@@ -16,23 +16,23 @@ if (isset($_GET['iddanhmuc'])) {
 }
 ?>
 
-<table border=1>
-    <caption>Sửa danh mục</caption>
+<table class="mt-5 ml-5 h-[150px]">
+    <caption class="text-[30px] font-medium mb-5">Sửa danh mục</caption>
     <form
         action="modules/quanlydanhmuc/xuly.php?iddanhmuc=<?php echo $row['id'] ?>"
         method="post">
         <tr>
-            <td><label for="id_cate">ID_CATEGORY</label></td>
-            <td><input type="text" name="id_cate" value="<?php echo $row['id'] ?>">
+            <td class="font-semibold"><label for="id_cate">ID_CATEGORY</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="id_cate" value="<?php echo $row['id'] ?>">
             </td>
         </tr>
         <tr>
-            <td><label for="name_cate">NAME_CATEGORY</label></td>
-            <td><input type="text" name="name_cate" value="<?php echo $row['name'] ?>">
+            <td class="font-semibold"><label for="name_cate">NAME_CATEGORY</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="name_cate" value="<?php echo $row['name'] ?>">
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" name="suadanhmuc" value="Sửa danh mục"></td>
+            <td class="text-center h-[40px] w-[50px] bg-gray-400 rounded-2xl font-semibold" ><input type="submit" name="suadanhmuc" value="Sửa danh mục"></td>
         </tr>
     </form>
 </table>

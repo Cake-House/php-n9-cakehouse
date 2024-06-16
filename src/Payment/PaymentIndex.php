@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Thanh Toán Giỏ Hàng</title>
     <style>
         body {
@@ -145,6 +144,12 @@
     </style>
 </head>
 <body>
+    <?php
+    $get_prod_by_id = "SELECT * FROM product WHERE product.id = '$_GET[id]'";
+    $prod_query = mysqli_query($conn, $get_prod_by_id);
+    $prod_row = mysqli_fetch_array($prod_query);
+    $total = $prod_row['price'] + 30000;
+    ?>
     <div class="container">
     <div class="row-fluid bolasSteps">
   <div class="span3">
@@ -157,8 +162,8 @@
     <div class="flechaSteps paso4"></div>
   </div>
 </div>
-       <form action="momo.php" method="post">
-       <div class="content">
+        <form action="Payment/momo.php" method="post">
+        <div class="content">
             <div class="section">
                 <h2>1 Thông tin hóa đơn</h2>
                 <label for="name">Tên </label>
@@ -173,22 +178,27 @@
                 <textarea id="note" name="note" rows="4"></textarea>
             </div>
             <div class="section">
-            <h2> 2 Thông tin giỏ hàng</h2>
-                <p>Sản phẩm: Mochi kem việt quất - 16 cm x 1</p>
-                <p>Tạm tính: 290.000 đ</p>
+            <h2>2 Thông tin giỏ hàng</h2>
+                <p>Sản phẩm:<?php echo $prod_row['title'] ?></p>
+                <img class="w-[240px] h-[240px]" src="<?php echo $prod_row['thumbnail']?>" alt="image">
+                <p>Tạm tính: <?php echo number_format($prod_row['price'], 0, ',', '.') . ' đ' ?></p>               
                 <p>Giao hàng: 30.000 đ</p>
-                <p class="total">290.000 đ</p>
+                <p class="total" value = <?php $total ?> > <?php echo number_format($total, 0, ',', '.') . ' đ' ?></p>
+                <input type="hidden" name="total" value="<?php echo $total ;?>">
             </div>
             <div class="section">
-                
-                <button type="submit" name="cod" class="btn">THANH TOÁN KHI NHẬN HÀNG</button>
+                <button class="btn" name="payUrl" type="submit">Thanh toán qua MOMO</button>
                 <br>
-                <button type="submit" name="payUrl" class="btn">THANH TOÁN MOMO</button>
-
-                
+                <a href="index.php?page=paymentdone" class="btn">Thanh toán khi nhận hàng</a>
+    
             </div>
         </div>
-       </form>
+        </form>
+                                        <!-- test momo:
+                                NGUYEN VAN A
+                                9704 0000 0000 0018
+                                03/07
+                                OTP -->
     </div>
 </body>
 </html>

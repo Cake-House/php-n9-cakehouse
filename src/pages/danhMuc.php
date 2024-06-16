@@ -102,21 +102,7 @@ $query_category =mysqli_query($conn,$sql_category);
             ?>
           </div>
         </ul>
-        <div class="flex justify-end clear-both mt-5 mx-[59px]">
-          <ul class="list_trang ">
-            <?php
-              for($i = 1; $i <= $page_pro; $i++) {
-            ?>
-              <li class="cursor-pointer" <?php if($i == $trang) {echo 'style="background: #ed2224; color: #fff;"';} else {echo '';}?>>
-                <a <?php if($i == $trang) {echo 'style="color: #fff;"';}?> 
-                  href="index.php?trang=<?php echo $i ?>&search_key=<?php echo $search_key ?>"><?php echo $i ?>
-                </a>
-              </li>
-            <?php
-              }
-            ?>
-          </ul>
-        </div>
+        
         </div>
     </div>
     <div>

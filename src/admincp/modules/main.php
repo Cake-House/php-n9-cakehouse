@@ -35,6 +35,9 @@
                 elseif($tam=='quanlysanpham' && $query=='sua'){
                     include("modules/quanlysanpham/sua.php");
                 }
+                elseif($tam=='quanlysanpham' && $query=='them'){
+                    include("modules/quanlysanpham/them.php");
+                }
                 elseif($tam=='quanlyfeedback' && $query=='lietke'){
                     include("modules/quanlyfeedback/lietke.php");
                 }

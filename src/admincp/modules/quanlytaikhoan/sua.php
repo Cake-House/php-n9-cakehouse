@@ -16,19 +16,19 @@ if (isset($_GET['idtaikhoan'])) {
 }
 ?>
 
-<table border=1>
-    <caption>Sửa tài khoản</caption>
+<table class="mt-5 ml-5 h-[600px]">
+    <caption class="text-[30px] font-medium mb-5">Sửa tài khoản</caption>
     <form
         action="modules/quanlytaikhoan/xuly.php?idtaikhoan=<?php echo $row['id'] ?>"
         method="post" enctype="multipart/form-data">
         <tr>
-            <td><label for="">Fullname</label></td>
-            <td><input type="text" name="fullname"
+            <td class="font-semibold"><label for="">Fullname</label></td>
+            <td><input class="w-[300px] h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="fullname"
                     value="<?php echo $row['fullname'] ?>">
             </td>
         </tr>
         <tr>
-            <td><label for="">Avatar</label></td>
+            <td class="font-semibold"><label for="">Avatar</label></td>
             <td>
                 <img src="modules/quanlytaikhoan/uploads/<?php echo $row['avatar'] ?>"
                     width="100px" alt="Avatar">
@@ -36,31 +36,31 @@ if (isset($_GET['idtaikhoan'])) {
             </td>
         </tr>
         <tr>
-            <td><label for="">Email</label></td>
-            <td><input type="text" name="email"
+            <td class="font-semibold"><label for="">Email</label></td>
+            <td><input class="w-[300px] h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="email"
                     value="<?php echo $row['email'] ?>">
             </td>
         </tr>
         <tr>
-            <td><label for="">Phone</label></td>
-            <td><input type="text" name="phone"
+            <td class="font-semibold"><label for="">Phone</label></td>
+            <td><input class="w-[300px] h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="phone"
                     value="<?php echo $row['phone'] ?>">
             </td>
         </tr>
         <tr>
-            <td><label for="">Address</label></td>
-            <td><input type="text" name="address"
+            <td class="font-semibold"><label for="">Address</label></td>
+            <td><input class="w-[300px] h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="address"
                     value="<?php echo $row['address'] ?>">
             </td>
         </tr>
         <tr>
-            <td><label for="">Password</label></td>
-            <td><input type="text" name="password" value="<?php echo $row['password'] ?>"></td>
+            <td class="font-semibold"><label for="">Password</label></td>
+            <td><input class="w-[300px] h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="password" value="<?php echo $row['password'] ?>"></td>
         </tr>
         <tr>
-            <td><label for="danhmuc_role">Role</label></td>
+            <td class="font-semibold"><label for="danhmuc_role">Role</label></td>
             <td>
-            <select name="danhmuc_role">
+            <select class="w-[300px] h-[40px] border-cyan-950 border-2 rounded-xl indent-2" name="danhmuc_role">
     <?php
     $sql_danhmuc = "SELECT * FROM role";
     $query_danhmuc = mysqli_query($conn, $sql_danhmuc);
@@ -76,7 +76,7 @@ if (isset($_GET['idtaikhoan'])) {
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" name="suataikhoan" value="Sửa tài khoản"></td>
+            <td class="font-semibold text-center p-2 h-[40px] w-[50px] bg-gray-400 rounded-2xl"><input type="submit" name="suataikhoan" value="Sửa tài khoản"></td>
         </tr>
     </form>
 </table>

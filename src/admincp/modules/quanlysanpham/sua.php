@@ -16,54 +16,54 @@ if (isset($_GET['idsanpham'])) {
 }
 ?>
 
-<table border=1>
-    <caption>Sửa sản phẩm</caption>
+<table class="mt-5 ml-5 h-[700px]">
+    <caption class="text-[30px] font-medium mb-5">Sửa sản phẩm</caption>
     <form
         action="modules/quanlysanpham/xuly.php?idsanpham=<?php echo $row['id'] ?>"
         method="post" enctype="multipart/form-data">
         <tr>
-            <td><label for="">Title</label></td>
-            <td><input type="text" name="title"
+            <td class="font-semibold"><label for="">Title</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="title"
                     value="<?php echo $row['title'] ?>">
             </td>
         </tr>
         <tr>
-            <td><label for="">Price</label></td>
-            <td><input type="text" name="price"
+            <td class="font-semibold"><label for="">Price</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="price"
                     value="<?php echo $row['price'] ?>">
             </td>
         </tr>
         <tr>
-            <td><label for="thumbnail">IMAGE</label></td>
+            <td class="font-semibold"><label for="thumbnail">IMAGE</label></td>
             <td>
                 <img src="<?php echo $row['thumbnail'] ?>" alt="Product" width="100px">
                 <input type="file" name="hinhanh">
             </td>
         </tr>
         <tr>
-            <td><label for="">Description</label></td>
+            <td class="font-semibold"><label for="">Description</label></td>
             <td>
-                <textarea name="description" cols="30" rows="10">
+                <textarea class="h-[250px] border-cyan-950 border-2 rounded-xl indent-2" name="description" cols="30" rows="10">
                     <?php echo $row['description'] ?>
                 </textarea>
             </td>
         </tr>
         <tr>
-            <td><label for="">Created_at</label></td>
-            <td><input type="text" name="created_at"
+            <td class="font-semibold"><label for="">Created_at</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="created_at"
                     value="<?php echo $row['created_at'] ?>">
             </td>
         </tr>
         <tr>
-            <td><label for="">Updated_at</label></td>
-            <td><input type="text" name="updated_at"
+            <td class="font-semibold"><label for="">Updated_at</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="updated_at"
                     value="<?php echo $row['updated_at'] ?>">
             </td>
         </tr>
         <tr>
-            <td><label for="danhmuc_role">ID_CATE</label></td>
+            <td class="font-semibold"><label for="danhmuc_role">ID_CATE</label></td>
             <td>
-                <select name="danhmuc_role">
+                <select class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" name="danhmuc_role">
                     <?php
     $sql_danhmuc = "SELECT * FROM category";
 $query_danhmuc = mysqli_query($conn, $sql_danhmuc);
@@ -79,7 +79,7 @@ while ($row_danhmuc = mysqli_fetch_array($query_danhmuc)) {
             </td>
         </tr>
         <tr>
-            <td colspan="2"><input type="submit" name="suasanpham" value="Sửa sản phẩm"></td>
+            <td class="font-semibold text-center p-2 h-[40px] w-[50px] bg-gray-400 rounded-2xl"><input type="submit" name="suasanpham" value="Sửa sản phẩm"></td>
         </tr>
     </form>
 </table>
