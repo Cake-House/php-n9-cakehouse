@@ -175,9 +175,9 @@
 </head>
 
 <body>
-    <div class="appCard">
-        <div class="container text-center">
-            <h4 class="mt-5">Đơn hàng của bạn đã được đặt thành công!</h4>
+    <div class="appCard h-[260px]">
+        <div class="container text-center mt-[100px]">
+            <h4 class="text-xl mb-5">Đơn hàng của bạn đã được đặt thành công!</h4>
             <div class="success-checkmark">
                 <div class="check-icon">
                     <span class="icon-line line-tip"></span>
@@ -186,7 +186,7 @@
                     <div class="icon-fix"></div>
                 </div>
             </div>
-            <p>Cảm ơn bạn đã tin tưởng chúng mình.</p>
+            <p class="text-lg">Cảm ơn bạn đã tin tưởng chúng mình.</p>
 
             
         </div>

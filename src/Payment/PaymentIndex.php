@@ -101,7 +101,7 @@
         }
         .section h2 {
             font-size: 18px;
-            margin-bottom: 10px;
+            margin: 5px;
         }
         .section label {
             display: block;
@@ -165,7 +165,11 @@
         <form action="Payment/momo.php" method="post">
         <div class="content">
             <div class="section">
-                <h2>1 Thông tin hóa đơn</h2>
+                <div class="flex justify-center">
+                    <div class="rounded-3xl bg-[#e74c3c] text-white w-8 h-8 p-[5px] text-center ">1</div>   
+                    <h2>Thông tin hóa đơn</h2>
+                </div>
+                <br>
                 <label for="name">Tên </label>
                 <input type="text" id="name" name="name">
                 <label for="address">Địa chỉ</label>
@@ -178,18 +182,33 @@
                 <textarea id="note" name="note" rows="4"></textarea>
             </div>
             <div class="section">
-            <h2>2 Thông tin giỏ hàng</h2>
-                <p>Sản phẩm:<?php echo $prod_row['title'] ?></p>
-                <img class="w-[240px] h-[240px]" src="<?php echo $prod_row['thumbnail']?>" alt="image">
-                <p>Tạm tính: <?php echo number_format($prod_row['price'], 0, ',', '.') . ' đ' ?></p>               
-                <p>Giao hàng: 30.000 đ</p>
-                <p class="total" value = <?php $total ?> > <?php echo number_format($total, 0, ',', '.') . ' đ' ?></p>
+                <div class="flex justify-center">
+                    <div class="rounded-3xl bg-[#e74c3c] text-white w-8 h-8 p-[5px] text-center ">2</div>   
+                    <h2>Thông tin giỏ hàng</h2>
+                </div>
+                <br>
+                <div class="flex flex-col justify-center items-center">
+                    <p class="text-xl mb-3">Sản phẩm: <?php echo $prod_row['title'] ?></p>
+                    <img class="mb-3 w-[300px] h-[300px] rounded-xl" src="<?php echo $prod_row['thumbnail']?>" alt="image">
+                </div>
+                <p class="my-3">Tạm tính: <?php echo number_format($prod_row['price'], 0, ',', '.') . ' đ' ?></p>               
+                <p class="my-2">Giao hàng: 30.000 đ</p>
+                <div class="grid grid-cols-2 text-xl my-3 border-t-2 py-4">
+                    <p class="font-semibold">Tổng: </p>
+                    <p class="total" value = <?php $total ?> >  <?php echo number_format($total, 0, ',', '.') . ' đ' ?></p>
+                </div>
                 <input type="hidden" name="total" value="<?php echo $total ;?>">
+
             </div>
             <div class="section">
+                <div class="flex justify-center">
+                    <div class="rounded-3xl bg-[#e74c3c] text-white w-8 h-8 p-[5px] text-center ">3</div>   
+                    <h2>Phương thức thanh toán</h2>
+                </div>
+                <br>
                 <button class="btn" name="payUrl" type="submit">Thanh toán qua MOMO</button>
                 <br>
-                <a href="index.php?page=paymentdone" class="btn">Thanh toán khi nhận hàng</a>
+                <button class="btn" name="cod" type="submit">Thanh toán khi nhận hàng</button>
     
             </div>
         </div>
