@@ -5,17 +5,17 @@
         action="modules/quanlydanhmuc/xuly.php"
         method="post">
         <tr>
-            <td><label for="id_cate">ID_CATEGORY</label></td>
-            <td><input type="text" name="id_cate">
+            <td class="font-semibold"><label for="id_cate">ID_CATEGORY</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="id_cate">
             </td>
         </tr>
         <tr>
-            <td><label for="name_cate">NAME_CATEGORY</label></td>
-            <td><input type="text" name="name_cate">
+            <td class="font-semibold"><label for="name_cate">NAME_CATEGORY</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="name_cate">
             </td>
         </tr>
         <tr>
-            <td class="text-center t-5 w-[50px] bg-gray-400 rounded-2xl"><input type="submit" name="themdanhmuc" value="Thêm danh mục"></td>
+            <td class="font-semibold text-center p-2 h-[40px] w-[50px] bg-gray-400 rounded-2xl"><input type="submit" name="themdanhmuc" value="Thêm danh mục"></td>
         </tr>
     </form>
 </table>
