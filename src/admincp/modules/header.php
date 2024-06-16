@@ -1,13 +1,13 @@
 <?php
-session_start();
 include('config/connect.php');
 ?>
 <div class="header flex flex-col w-full">
   <div class="h-[70px] flex justify-between px-6 header__inner border-2 border-b-[#B5B5B5] shadow-sm shadow-[#B5B5B5]">
     <div class="left flex items-center">
-      <img class="logo_header max-w-[200px] max-h-[70px] ml-10 mr-12" src="../images/logo-1.png" alt="Logo" />
+      <img class="logo_header max-w-[200px] max-h-[70px] mr-12" src="../images/logo-1.png" alt="Logo" />
     </div>
-    <div class="right flex items-center">
+    <div class="right relative flex items-center cursor-default">
+      <div class="flex">
         <p>Chào,
           <?php
           if(isset($_SESSION['user_id'])) {
@@ -27,11 +27,21 @@ include('config/connect.php');
           } else {
               echo "Guest";
           }
-          ?>
+?>
         </p>
         <div class="ml-3">
           <i class="fa-solid fa-caret-down" style="color: #91959c;"></i>
         </div>
+      </div>
+      <div
+        class="logout absolute pl-5 items-center leading-[45px] top-[67px] right-[1px] w-[150px] border-2 shadow-sm cursor-pointer border-t-red-500">
+        <a href="../admincp/login.php" class=" flex">
+          <div>
+            <i class="fa-solid fa-right-from-bracket" style="color: #232d3e;"></i>
+          </div>
+          <p class="ml-1">Đăng xuất</p>
+        </a>
+      </div>
     </div>
   </div>
 </div>

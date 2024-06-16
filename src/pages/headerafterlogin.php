@@ -14,6 +14,10 @@
     $query_category1=mysqli_query($conn,$sql_category1);   
     $sql_category2="SELECT * FROM category WHERE id>12";
     $query_category2=mysqli_query($conn,$sql_category2); 
+    $id = 1;
+    $sql_info = "SELECT * FROM user WHERE id='$id' LIMIT 1";
+    $query_info = mysqli_query($conn, $sql_info);
+    $info = mysqli_fetch_array($query_info);
   ?>
 
   <div class="header flex w-full">
@@ -73,14 +77,14 @@
           </a>
         </div>
         <!-- menu user -->
-        <div class="menu__user w-[100px] flex justify-end cursor-pointer">
-          <div class="scale-150">
-            <i class="fa-regular fa-circle-user scale-150"></i>
-            <i class="fa-solid fa-caret-down scale-50"></i>
+        <div onclick="show_menu()" class="menu__user w-[100px] flex justify-end cursor-pointer">
+          <div class="flex justify-center">
+            <img src="./images/<?php echo $info['avatar']?>" alt="Avatar" class="avatar">
+            <i class="fa-solid fa-caret-down px-[8px] py-[16px]"></i>
           </div>
-          <ul class="submenu__user list-none shadow-lg w-[200px] top-12 rounded-b-md">
-            <li><a href="index.php?page=user-info"><i class="fa-regular fa-address-book"></i> Thông tin cá nhân</a></li>
-            <li><a href="index.php?page=account"><i class="fa-solid fa-shield-halved"></i> Tài khoản & bảo mật</a></li>
+          <ul id="submenu_user" class="submenu__user list-none shadow-lg w-[200px] top-[60px] rounded-b-md">
+            <li><a href="index.php?page=user-info&id=1"><i class="fa-regular fa-address-book"></i> Thông tin cá nhân</a></li>
+            <li><a href="index.php?page=user-account&id=1"><i class="fa-solid fa-shield-halved"></i> Tài khoản & bảo mật</a></li>
             <li><a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</a></li>
           </ul>
         </div>
@@ -97,4 +101,21 @@
       document.getElementById("search_form").submit();
     }
   });
+
+  function show_menu() {
+  document.getElementById("submenu_user").classList.toggle("show");
+  }
+
+  // window.onclick = function(event) {
+  //   if (!event.target.matches('.menu__user')) {
+  //     var dropdowns = document.getElementsByClassName("submenu__user");
+  //     var i;
+  //     for (i = 0; i < dropdowns.length; i++) {
+  //       var openDropdown = dropdowns[i];
+  //       if (openDropdown.classList.contains('show')) {
+  //         openDropdown.classList.remove('show');
+  //       }
+  //     }
+  //   }
+  // }
 </script>
