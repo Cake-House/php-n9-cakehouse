@@ -1,10 +1,10 @@
 <?php
- include("admincp/config/connect.php");
+include("admincp/config/connect.php");
 $sql_show = "SELECT * FROM product WHERE product.category_id ='$_GET[id]' ORDER BY id DESC ";
-$query_show= mysqli_query($connect, $sql_show);
+$query_show= mysqli_query($conn, $sql_show);
 
 $sql_cate = "SELECT * FROM category WHERE id ='$_GET[id]' LIMIT 1 ";
-$query_cate =mysqli_query($connect,$sql_cate);
+$query_cate =mysqli_query($conn,$sql_cate);
 $row_title =mysqli_fetch_array($query_cate);
 ?>
 

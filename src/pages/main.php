@@ -33,6 +33,9 @@
       else if($page=='reset-password'){
         include("pages/account/reset-password.php");
       }
+      else if($page=='category'){
+        include("pages/danhMuc.php");
+      }
       else if($check == true){
         include("pages/main/search.php");
       }
