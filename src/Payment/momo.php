@@ -1,4 +1,14 @@
 <?php
+include "../admincp/config/Connect.php";
+
+$fullname = $_POST['name'];
+$address = $_POST['address'];
+$phone = $_POST['phone'];
+//$email = $_POST['email'];
+$note = $_POST['note'];
+$sql_order = "INSERT INTO orders (fullname, phone, content, address) VALUES ('$fullname','$phone','$note','$address')";
+$query_order = mysqli_query($conn, $sql_order) or die("Couldn't connect");
+
 function execPostRequest($url, $data)
 {
     $ch = curl_init($url);
@@ -69,6 +79,9 @@ $extraData = "";
     //Just a example, please check more in there
 
     header('Location: ' . $jsonResult['payUrl']);
-
+   
+}elseif(isset($_POST['cod'])){
+    header("Location:../index.php?page=paymentdone");
 }
+
 ?>
