@@ -10,11 +10,12 @@
 </head>
 <body>
   <?php
+
     $sql_category1="SELECT * FROM category WHERE id<13";
     $query_category1=mysqli_query($conn,$sql_category1);   
     $sql_category2="SELECT * FROM category WHERE id>12";
     $query_category2=mysqli_query($conn,$sql_category2); 
-    $id = 1;
+    $id = $_SESSION['user'];
     $sql_info = "SELECT * FROM user WHERE id='$id' LIMIT 1";
     $query_info = mysqli_query($conn, $sql_info);
     $info = mysqli_fetch_array($query_info);
@@ -83,9 +84,9 @@
             <i class="fa-solid fa-caret-down px-[8px] py-[16px]"></i>
           </div>
           <ul id="submenu_user" class="submenu__user list-none shadow-lg w-[200px] top-[60px] rounded-b-md">
-            <li><a href="index.php?page=user-info&id=1"><i class="fa-regular fa-address-book"></i> Thông tin cá nhân</a></li>
-            <li><a href="index.php?page=user-account&id=1"><i class="fa-solid fa-shield-halved"></i> Tài khoản & bảo mật</a></li>
-            <li><a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</a></li>
+            <li><a href="index.php?page=user-info&id=<?php echo $id ?>"><i class="fa-regular fa-address-book"></i> Thông tin cá nhân</a></li>
+            <li><a href="index.php?page=user-account&id=<?php echo $id ?>"><i class="fa-solid fa-shield-halved"></i> Tài khoản & bảo mật</a></li>
+            <li><a href="./pages/account/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</a></li>
           </ul>
         </div>
       </div>

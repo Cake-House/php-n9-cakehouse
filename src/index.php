@@ -13,8 +13,19 @@
 <body>
   <div class="wrapper">
     <?php
+      session_start();
+      $_SESSION['user'] = 2;
       include("admincp/config/connect.php");
-      include("pages/headerafterlogin.php");
+      if(isset($_POST['btn_logout'])) {
+        $_SESSION['user'] = "";
+      }
+      if($_SESSION['user'] != "") {
+        include("pages/headerafterlogin.php");
+      }
+      else {
+        include("pages/header.php");
+      }
+      // include("pages/header.php");
       include("pages/main.php");
       include("pages/footer.php");
     ?>

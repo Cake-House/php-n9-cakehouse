@@ -42,6 +42,9 @@
       else if($page=='reset-password'){
         include("pages/account/reset-password.php");
       }
+      else if($page=='category'){
+        include("pages/danhMuc.php");
+
       else if($page =='payment'){
         include("Payment/PaymentIndex.php");
       }

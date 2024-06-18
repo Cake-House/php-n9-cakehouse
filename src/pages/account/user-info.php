@@ -68,9 +68,9 @@
     <div class="__left">
       <ul class="w-[240px] sidebar__user">
         <h2 class="uppercase font-semibold rounded-t-md p-3 text-xl text-center">danh mục</h2>
-        <li><a href="index.php?page=user-info&id=1"><i class="fa-regular fa-address-book"></i> Thông tin cá nhân</a></li>
-        <li><a href="index.php?page=user-account&id=1"><i class="fa-solid fa-shield-halved"></i> Tài khoản & bảo mật</a></li>
-        <li><a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</a></li>
+        <li><a href="index.php?page=user-info&id=<?php echo $id ?>"><i class="fa-regular fa-address-book"></i> Thông tin cá nhân</a></li>
+        <li><a href="index.php?page=user-account&id=<?php echo $id ?>"><i class="fa-solid fa-shield-halved"></i> Tài khoản & bảo mật</a></li>
+        <li><a href="./pages/account/logout.php"><button name="btn_logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</button></a></li>
       </ul>
     </div>
     <div class="__right px-10 w-full"> 
