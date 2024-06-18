@@ -24,6 +24,15 @@
       else if($page=='contact'){
         include("pages/main/contact.php");
       }
+      else if($page=='category'){
+        include("pages/danhMuc.php");
+      }
+      else if($page== "product"){
+        include("product/product-detail.php");
+      }
+      else if($page== "cart"){
+        include("pages/cart/view_cart.php");
+      }
       else if($page=='user-info'){
         include("pages/account/user-info.php");
       }
@@ -35,6 +44,12 @@
       }
       else if($page=='category'){
         include("pages/danhMuc.php");
+
+      else if($page =='payment'){
+        include("Payment/PaymentIndex.php");
+      }
+      else if($page =='paymentdone'){
+        include("Payment/PaymentDone.php");
       }
       else if($check == true){
         include("pages/main/search.php");
