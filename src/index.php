@@ -15,13 +15,10 @@
     <?php
       session_start();
       include("admincp/config/connect.php");
-      if(isset($_POST['btn_logout'])) {
-        $_SESSION['user'] = "";
-      }
-      if($_SESSION['user'] != "") {
+
+      if(isset($_SESSION['user']) && $_SESSION['user'] != "") {
         include("pages/headerafterlogin.php");
-      }
-      else {
+      } else {
         include("pages/header.php");
       }
       // include("pages/header.php");
