@@ -13,7 +13,7 @@ body {
     background: radial-gradient(ellipse at center, rgba(255, 254, 234, 1) 0%, rgba(255, 254, 234, 1) 35%, #B7E8EB 100%);
     overflow: hidden;
     /* background-image: url('../userCommon/images/logo.svg'); */
-    background-image: url(https://static.vecteezy.com/system/resources/previews/010/617/206/original/landscape-cartoon-scene-with-green-trees-on-hills-and-white-fluffy-cloud-in-summer-blue-sky-background-vector.jpg);
+    background-image: url(https://img.freepik.com/free-photo/assortment-pieces-cake_114579-57229.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -97,7 +97,7 @@ body {
 
 body {
     font-family: 'Montserrat', sans-serif;
-     display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -136,11 +136,11 @@ span {
     box-shadow: 30px 14px 28px rgba(0, 0, 5, .2), 0 10px 10px rgba(0, 0, 0, .2);
     position: relative;
     overflow: hidden;
-    opacity: 85%;
-    width: 768px;
+    opacity: 92%;
+    width: 740px;
     max-width: 100%;
     min-height: 480px;
-    transition: 333ms;
+    transition: 50ms;
 }
 
 
@@ -186,10 +186,11 @@ span {
     padding: 12px 15px;
     margin: 8px 0;
     width: 100%;
+    min-width: 240px;
 }
 
 .form-container input:hover {
-    transform: scale(101%);
+    transform: scale(102%);
 }
 
 button {

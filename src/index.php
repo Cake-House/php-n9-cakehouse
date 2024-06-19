@@ -14,7 +14,6 @@
   <div class="wrapper">
     <?php
       session_start();
-      $_SESSION['user'] = 2;
       include("admincp/config/connect.php");
       if(isset($_POST['btn_logout'])) {
         $_SESSION['user'] = "";

@@ -44,7 +44,7 @@
       }
       else if($page=='category'){
         include("pages/danhMuc.php");
-
+      }
       else if($page =='payment'){
         include("Payment/PaymentIndex.php");
       }

@@ -19,5 +19,5 @@ if (isset($_POST['addtocart'])) {
     }
     array_push($_SESSION['cart'], $product);
     // $_SESSION['addtocart'][] = $product;
-    header('Location: index.php?page=cart');
+    header('Location: ../../index.php?page=cart');
 }
