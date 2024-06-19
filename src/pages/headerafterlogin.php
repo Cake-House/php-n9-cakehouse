@@ -73,7 +73,7 @@
       <div class="flex items-center justify-between gap-5 right">
         <!-- giỏ hàng -->
         <div class="scale-150 w-12 cursor-pointer flex justify-end">
-          <a href="index.php?page=giohang">
+          <a href="index.php?page=cart">
             <i class="fa-solid fa-basket-shopping scale-15"></i>
           </a>
         </div>

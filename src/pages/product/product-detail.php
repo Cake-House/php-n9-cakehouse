@@ -1,6 +1,6 @@
 <style>
     .container {
-        width: 60%;
+        width: 70%;
         margin: 0 auto;
         padding: 20px;
     }
@@ -38,7 +38,8 @@
     }
 
     .product-details .size {
-        font-size: 16px;/ margin-bottom: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
     }
 
     .description {
@@ -103,7 +104,7 @@ $related_row = mysqli_fetch_array($related_query);
     <img src="https://origato.com.vn/wp-content/themes/3btheme/lib/images/bg-ar.png" alt="">
 </div>
 <div class="container">
-    <div class="mx-auto px-14 py-3 max-w-6xl">
+    <div class="mx-auto py-3 max-w-6xl">
         <div class="breadcrumb__container">
             <div class="breadcrumb flex list-none py-2">
                 <span class="font-medium">
@@ -114,7 +115,7 @@ $related_row = mysqli_fetch_array($related_query);
             </div>
         </div>
     </div>
-    <div class="product mx-auto px-14 max-w-6xl">
+    <div class="product mx-auto max-w-6xl">
         <div class="product-image w-[800px] h-[500px]">
             <img src="<?php echo $prod_row['thumbnail'] ?>" alt="image">
         </div>
@@ -129,7 +130,7 @@ $related_row = mysqli_fetch_array($related_query);
                 <input type="hidden" name="title" value="<?php echo $prod_row['title']; ?>">
                 <input type="hidden" name="price" value="<?php echo $prod_row['price']; ?>">
                 <input type="hidden" name="quantity_hidden" value="1">
-                <div class="description">
+                <div class="description text-justify">
                     <span>
                         <?php echo $prod_row['description'] ?>
                     </span>
@@ -170,7 +171,7 @@ $related_row = mysqli_fetch_array($related_query);
         </div>
     </div>
     <div class="additional">
-        <div class="additional-info">
+        <div class="additional-info text-justify">
             <h2>Mô tả</h2>
             <p>Bánh sinh nhật tại Origato có độ ngọt vừa phải, thanh mát, dịu nhẹ, tươi ngon 100%. Đặc biệt, bánh tại
                 Origato không dùng phụ gia, hương liệu, chất bảo quản, bánh tươi 100% sản xuất theo quy trình Nhật Bản,
@@ -181,8 +182,8 @@ $related_row = mysqli_fetch_array($related_query);
         </div>
         <div class="additional-info">
             <h2>Sản phẩm tương tự</h2>
-            <ul class="product__list flex justify-center mb-6">
-                <div class="grid grid-cols-4 gap-20">
+            <ul class="product__list flex justify-center my-6">
+                <div class="grid grid-cols-4 gap-5">
                     <?php
                     while ($related_row = mysqli_fetch_array($related_query)) {
                         ?>
