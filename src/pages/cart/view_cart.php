@@ -1,5 +1,4 @@
 <?php
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['update_cart'])) {
         foreach ($_SESSION['cart'] as $key => &$item) {
@@ -9,20 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         unset($item);
     } elseif (isset($_POST['delete'])) {
-        foreach ($_SESSION['cart'] as $key => $value) {
-            if ($_POST['delete'] == $key) {
-                unset($_SESSION['cart'][$key]);
-            }
+        $keyToDelete = $_POST['delete'];
+        if (isset($_SESSION['cart'][$keyToDelete])) {
+            unset($_SESSION['cart'][$keyToDelete]);
         }
     }
-}
-if (isset($_SESSION['cart'])) {
-    foreach ($_SESSION['cart'] as $key => &$item) {
-        if (isset($_POST['quantity_hidden'][$key])) {
-            $item['quantity_hidden'] = (int) $_POST['quantity_hidden'][$key];
-        }
-    }
-    unset($item);
 }
 $total = 0;
 if (isset($_SESSION['cart'])) {
@@ -91,6 +81,7 @@ if (isset($_SESSION['cart'])) {
         margin-top: 20px;
     }
 </style>
+
 <div class="cart-container">
     <div class="breadcrumb__container">
         <div class="breadcrumb flex list-none py-4">
@@ -101,7 +92,7 @@ if (isset($_SESSION['cart'])) {
             </span>
         </div>
     </div>
-    <form method="post">
+    <form id="cart-form" action="" method="post">
         <table class="cart-table">
             <thead>
                 <tr>
@@ -113,47 +104,70 @@ if (isset($_SESSION['cart'])) {
                 </tr>
             </thead>
             <tbody>
-                <?php if(isset($_SESSION['cart'])) {
+                <?php if (isset($_SESSION['cart']) && count($_SESSION['cart']) > 0) {
                     foreach ($_SESSION['cart'] as $key => $item): ?>
                         <tr>
                             <td>
                                 <div class="grid grid-cols-12">
                                     <img class="col-span-2" src="<?php echo $item['thumbnail']; ?>" alt="image" width="100">
                                     <h2 class="col-span-10 text-justify"><?php echo $item['title']; ?></h2>
-                                    
+
                                 </div>
                             </td>
                             <td>
                                 <?php echo number_format($item['price'], 0, ',', '.'); ?> đ
                             </td>
                             <td>
-                                <input type="number" name="quantity_hidden" value="<?php echo $item['quantity_hidden']; ?>">
+                                <input type="number" name="quantity_hidden[<?php echo $key; ?>]"
+                                    value="<?php echo $item['quantity_hidden']; ?>">
                             </td>
                             <td>
                                 <?php echo number_format($item['price'] * $item['quantity_hidden'], 0, ',', '.'); ?> đ
                             </td>
                             <td>
-                                <input type="submit" name="delete" value="x">
+                                <button type="submit" name="delete" value="<?php echo $key; ?>">x</button>
                             </td>
                         </tr>
-                <?php 
-                    endforeach; }
-                    else {
-                        echo "<tr><td colspan=5><h2>Giỏ hàng trống!</h2></td></tr>";
-                    } 
+                        <?php
+                    endforeach;
+                } else {
+                    echo "<tr><td colspan=5><h2>Giỏ hàng trống!</h2></td></tr   >";
+                }
                 ?>
             </tbody>
         </table>
         <div class="cart-actions">
             <button type="submit" name="update_cart">Cập nhật giỏ hàng</button>
-            <button><a href="./index.php">Tiếp tục mua hàng</a></button>
+            <button><a href="index.php?search_key=">Tiếp tục mua hàng</a></button>
+        </div>
+        <div class="total">
+            Tổng:
+            <?php echo number_format($total, 0, ',', '.'); ?> đ
+            <input type="hidden" name="total" value="<?php echo $total; ?>">
         </div>
     </form>
-    <div class="total">
-        Tổng:
-        <?php echo number_format($total, 0, ',', '.'); ?> đ
-    </div>
     <div class="cart-actions">
-        <button>THANH TOÁN</button>
+        <button onclick="get_payment()">THANH TOÁN</button>
+        <script>
+            function get_payment() {
+                var form = document.createElement('form');
+                form.method = 'post';
+                form.action = 'index.php?page=payment';
+                var cartForm = document.getElementById('cart-form');
+                var inputs = cartForm.getElementsByTagName('input');
+                for (var i = 0; i < inputs.length; i++) {
+                    var input = inputs[i];
+                    if (input.name && input.value) {
+                        var inputClone = input.cloneNode();
+                        inputClone.value = input.value;
+                        form.appendChild(inputClone);
+                    }
+                }
+                document.body.appendChild(form);
+                form.submit();
+            }
+        </script>
+
     </div>
+    <!-- <input type="hidden" name="id" value="<?php echo $item['id']; ?>"> -->
 </div>

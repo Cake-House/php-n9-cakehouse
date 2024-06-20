@@ -129,7 +129,7 @@ $related_row = mysqli_fetch_array($related_query);
                 <input type="hidden" name="thumbnail" value="<?php echo $prod_row['thumbnail']; ?>">
                 <input type="hidden" name="title" value="<?php echo $prod_row['title']; ?>">
                 <input type="hidden" name="price" value="<?php echo $prod_row['price']; ?>">
-                <input type="hidden" name="quantity_hidden" value="1">
+                <input type="hidden" id="quantity_hidden" name="quantity_hidden" value="1">
                 <div class="description text-justify">
                     <span>
                         <?php echo $prod_row['description'] ?>

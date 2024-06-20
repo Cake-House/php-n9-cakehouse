@@ -145,10 +145,10 @@
 </head>
 <body>
     <?php
-    $get_prod_by_id = "SELECT * FROM product WHERE product.id = '$_GET[id]'";
-    $prod_query = mysqli_query($conn, $get_prod_by_id);
-    $prod_row = mysqli_fetch_array($prod_query);
-    $total = $prod_row['price'] + 30000;
+    // $get_prod_by_id = "SELECT * FROM product WHERE product.id = '$_POST[id]'";
+    // $prod_query = mysqli_query($conn, $get_prod_by_id);
+    // $prod_row = mysqli_fetch_array($prod_query);
+    $total = $_POST['total'] + 30000;
     ?>
     <div class="container">
     <div class="row-fluid bolasSteps">
@@ -186,17 +186,27 @@
                     <div class="rounded-3xl bg-[#e74c3c] text-white w-8 h-8 p-[5px] text-center ">2</div>   
                     <h2>Thông tin giỏ hàng</h2>
                 </div>
+                <?php if(isset($_SESSION['cart'])) {
+                    foreach ($_SESSION['cart'] as $key => $item): ?>
                 <br>
-                <div class="flex flex-col justify-center items-center">
-                    <p class="text-xl mb-3">Sản phẩm: <?php echo $prod_row['title'] ?></p>
-                    <img class="mb-3 w-[300px] h-[300px] rounded-xl" src="<?php echo $prod_row['thumbnail']?>" alt="image">
+                <div class="flex flex-col">
+                    <p class="text-xl mb-3">Sản phẩm: <?php echo $item['title'] ?></p>
+                    <!-- <img class="mb-3 w-[300px] h-[300px] rounded-xl" src="<?php echo $item['thumbnail']?>" alt="image"> -->
                 </div>
-                <p class="my-3">Tạm tính: <?php echo number_format($prod_row['price'], 0, ',', '.') . ' đ' ?></p>               
-                <p class="my-2">Giao hàng: 30.000 đ</p>
-                <div class="grid grid-cols-2 text-xl my-3 border-t-2 py-4">
+                <p class="my-3">Giá: <?php echo number_format($item['price'], 0, ',', '.') . ' đ' ?></p> 
+                <p class="my-3">Số lượng: <?php echo $item['quantity_hidden']; ?></p>  
+                <?php 
+                    endforeach; }
+                    else {
+                        echo "<tr><td colspan=5><h2>Giỏ hàng trống!</h2></td></tr   >";
+                    } 
+                ?>              
+                <p class="my-2 border-t-2 py-4">Giao hàng: 30.000 đ</p>
+                <div class="grid grid-cols-2 text-xl my-3 ">
                     <p class="font-semibold">Tổng: </p>
                     <p class="total" value = <?php $total ?> >  <?php echo number_format($total, 0, ',', '.') . ' đ' ?></p>
                 </div>
+                
                 <input type="hidden" name="total" value="<?php echo $total ;?>">
 
             </div>
