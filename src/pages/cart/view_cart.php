@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 unset($_SESSION['cart'][$key]);
             }
         }
-    }
+    } 
 }
 if (isset($_SESSION['cart'])) {
     foreach ($_SESSION['cart'] as $key => &$item) {
@@ -101,7 +101,7 @@ if (isset($_SESSION['cart'])) {
             </span>
         </div>
     </div>
-    <form method="post">
+    <form action="index.php?page=payment" method="post">
         <table class="cart-table">
             <thead>
                 <tr>
@@ -139,7 +139,7 @@ if (isset($_SESSION['cart'])) {
                 <?php 
                     endforeach; }
                     else {
-                        echo "<tr><td colspan=5><h2>Giỏ hàng trống!</h2></td></tr>";
+                        echo "<tr><td colspan=5><h2>Giỏ hàng trống!</h2></td></tr   >";
                     } 
                 ?>
             </tbody>
@@ -148,12 +148,15 @@ if (isset($_SESSION['cart'])) {
             <button type="submit" name="update_cart">Cập nhật giỏ hàng</button>
             <button><a href="./index.php">Tiếp tục mua hàng</a></button>
         </div>
-    </form>
-    <div class="total">
+        <div class="total">
         Tổng:
         <?php echo number_format($total, 0, ',', '.'); ?> đ
+        <input type="hidden" name="total" value="<?php echo $total ;?>">
     </div>
     <div class="cart-actions">
-        <button>THANH TOÁN</button>
+        <button name="payment">THANH TOÁN</button>
     </div>
+    <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+    </form>
+   
 </div>
