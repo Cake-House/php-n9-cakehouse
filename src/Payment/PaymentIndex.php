@@ -145,9 +145,9 @@
 </head>
 <body>
     <?php
-    $get_prod_by_id = "SELECT * FROM product WHERE product.id = '$_POST[id]'";
-    $prod_query = mysqli_query($conn, $get_prod_by_id);
-    $prod_row = mysqli_fetch_array($prod_query);
+    // $get_prod_by_id = "SELECT * FROM product WHERE product.id = '$_POST[id]'";
+    // $prod_query = mysqli_query($conn, $get_prod_by_id);
+    // $prod_row = mysqli_fetch_array($prod_query);
     $total = $_POST['total'] + 30000;
     ?>
     <div class="container">
@@ -189,7 +189,7 @@
                 <?php if(isset($_SESSION['cart'])) {
                     foreach ($_SESSION['cart'] as $key => $item): ?>
                 <br>
-                <div class="flex flex-col justify-center items-center">
+                <div class="flex flex-col">
                     <p class="text-xl mb-3">Sản phẩm: <?php echo $item['title'] ?></p>
                     <!-- <img class="mb-3 w-[300px] h-[300px] rounded-xl" src="<?php echo $item['thumbnail']?>" alt="image"> -->
                 </div>
