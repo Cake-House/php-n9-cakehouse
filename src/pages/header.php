@@ -4,7 +4,7 @@
 <div class="header flex w-full">
   <div class="h-[70px] flex justify-between px-6 header__inner">
     <div class="left flex items-center">
-      <a href="index.php?page=home">
+      <a href="index.html">
         <img class="logo_header max-w-[200px] max-h-[70px] ml-10 mr-12" 
         src="images/logo-1.png" alt="Logo" />
       </a>
@@ -12,7 +12,7 @@
     <div class="middle flex items-center">
       <ul class="flex justify-between items-center list__menu">
         <li class="p-[23px] cursor-pointer">
-          <a href="index.php?page=about">VỀ THE CAKE HOUSE</a>
+          <a href="about.html">VỀ THE CAKE HOUSE</a>
         </li>
         <li class="p-[23px] cursor-pointer">
           <a href="">BÁNH SINH NHẬT <i class="fa fa-caret-down"></i></a>
@@ -49,7 +49,7 @@
           </ul>
         </li>
         <li class="p-[23px] cursor-pointer">
-          <a href="index.php?page=contact">LIÊN HỆ</a>
+          <a href="contact.html">LIÊN HỆ</a>
         </li>
       </ul>
       <div class="flex p-[23px]">

@@ -8,8 +8,8 @@
 <table class="mt-5 ml-5 h-[300px]">
     <caption class="text-[30px] font-medium mb-5">Quản lý tài khoản</caption>
     <tr class="border-2">
-        <th class="w-[60px] text-center border-2">ID</th>
-        <th class="w-[90px] text-center border-2">FullName</th>
+        <th class="w-[50px] text-center border-2">ID</th>
+        <th class="w-[160px] text-center border-2">FullName</th>
         <th class="w-[100px] text-center border-2">Avatar</th>
         <th class="w-[100px] text-center border-2">Email</th>
         <th class="w-[50px] text-center border-2">Phone</th>
@@ -20,12 +20,12 @@
     </tr>
     <?php
         $sql_lietke_taikhoan = "SELECT user.id, user.fullname, user.avatar, user.email, user.phone, user.address, user.password, role.name FROM user INNER JOIN role ON user.role_id = role.id";
-    $query_lietke_taikhoan = mysqli_query($conn, $sql_lietke_taikhoan);
+        $query_lietke_taikhoan = mysqli_query($conn, $sql_lietke_taikhoan);
     while($row = mysqli_fetch_array($query_lietke_taikhoan)) {
         ?>
     <tr class="border-2">
-        <td class="h-[100px] w-[60px] text-center border-2"><?php echo $row['id'] ?></td>
-        <td class="h-[100px] w-[90px] text-center border-2"><?php echo $row['fullname'] ?></td>
+        <td class="h-[100px] w-[50px] text-center border-2"><?php echo $row['id'] ?></td>
+        <td class="h-[100px] w-[160px] text-center border-2"><?php echo $row['fullname'] ?></td>
         <td class="h-[100px] w-[100px] text-center border-2"><img src="../images/<?php echo $row['avatar'] ?>" alt="Avatar" width="100px"></td>
         <!-- modules/quanlytaikhoan/uploads/ -->
         <td class="h-[100px] w-[90px] text-center border-2"><?php echo $row['email'] ?></td>

@@ -70,7 +70,7 @@ if (isset($_POST['nhap'])) {
                         type="submit" name="nhap" value="Đăng nhập">
                 </div>
                 <div class="mt-3">
-                    <p class="font-light text-[14px] text-[#8B475D]"><a href="../index.php">Về trang chủ</a></p>
+                    <p class="font-light text-[14px] text-[#8B475D]"><a href="../index.html">Về trang chủ</a></p>
                 </div>
             </form>
         </div>

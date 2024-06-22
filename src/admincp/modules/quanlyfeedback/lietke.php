@@ -17,13 +17,13 @@
     <tr class="border-2">
         <td class="h-[100px] w-[90px] text-center border-2">
             <?php echo $row['id'] ?></td>
-        <td class="h-[100px] w-[90px] text-center border-2">
+        <td class="h-[140px] w-[90px] text-center border-2">
             <?php echo $row['fullname'] ?></td>
-        <td class="h-[100px] w-[90px] text-center border-2">
+        <td class="h-[100px] w-[180px] text-center border-2">
             <?php echo $row['email'] ?></td>
         <td class="h-[100px] w-[90px] text-center border-2">
             <?php echo $row['phone'] ?></td>
-        <td class="h-[100px] w-[90px] text-justify border-2">
+        <td class="h-[100px] w-[240px] text-justify border-2">
             <?php echo $row['note'] ?></td>
         <td class="h-[100px] w-[90px] text-center border-2">
             <?php echo $row['created_at'] ?></td>

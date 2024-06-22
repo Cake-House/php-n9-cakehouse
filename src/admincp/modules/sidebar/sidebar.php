@@ -1,4 +1,4 @@
-<div class="side_menu w-[250px] h-screen  p-[20px] bg-[#263544]">
+<div class="side_menu w-[250px] h-full  p-[20px] bg-[#263544]">
     <div class="side_menu_sub flex cursor-pointer">
         <a class="flex" href="index.php?action=quanlytaikhoan&query=lietke">
         <div class="w-[180px] flex">
@@ -33,7 +33,7 @@
         </a>
     </div>
     <div class="side_menu_sub flex cursor-pointer">
-        <a class="flex" href="index.php?action=quanlytaikhoan&query=lietke">
+        <a class="flex" href="index.php?action=quanlydonhang&query=lietke">
         <div class="w-[180px] flex">
             <div class="mr-3"><i class="fa-solid fa-file-invoice" style="color: #cacdd3;"></i></div>
             <span>Quản lý đơn hàng</span>

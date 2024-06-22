@@ -1,4 +1,4 @@
-<div class="main flex">
+<div class="main flex min-h-[720px]">
     <div class="left relative">
         <?php
         include('modules/sidebar/sidebar.php');
@@ -37,6 +37,9 @@
                 }
                 elseif($tam=='quanlysanpham' && $query=='them'){
                     include("modules/quanlysanpham/them.php");
+                }
+                elseif($tam=='quanlydonhang' && $query=='lietke'){
+                    include("modules/quanlydonhang/lietke.php");
                 }
                 elseif($tam=='quanlyfeedback' && $query=='lietke'){
                     include("modules/quanlyfeedback/lietke.php");

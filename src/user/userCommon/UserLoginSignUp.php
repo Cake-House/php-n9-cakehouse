@@ -119,7 +119,7 @@ if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password']
         <img src="./images/logo.svg" alt="" style="width: 120px;position: absolute; top: 20px ; right: 10px">
     </a>
 
-    <a href="../../index.php" class="p-2 bg-white" style="border-radius: 10px; position: absolute;top: 35px;left:10px;font-weight: bold;">
+    <a href="../../index.html" class="p-2 bg-white" style="border-radius: 10px; position: absolute;top: 35px;left:10px;font-weight: bold;">
         <i class="fa-solid fa-circle-chevron-left"></i>
         Về trang chủ
     </a>
