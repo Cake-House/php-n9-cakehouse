@@ -6,7 +6,11 @@ $address = $_POST['address'];
 $phone = $_POST['phone'];
 //$email = $_POST['email'];
 $note = $_POST['note'];
-$sql_order = "INSERT INTO orders (fullname, phone, content, address) VALUES ('$fullname','$phone','$note','$address')";
+$order_id = $_POST['order_id'];
+$amount = $_POST['total'];
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+    $currentTime = date("Y-m-d H:i:s");
+$sql_order = "INSERT INTO orders (fullname, phone, content, address, order_date, total, status) VALUES ('$fullname','$phone','$note','$address','$currentTime','$amount', 'Đang chuẩn bị')";
 $query_order = mysqli_query($conn, $sql_order) or die("Couldn't connect");
 
 function execPostRequest($url, $data)
@@ -53,7 +57,6 @@ $extraData = "";
     $ipnUrl = $ipnUrl;
     $redirectUrl = $redirectUrl;
     $extraData = $extraData;
-
     $requestId = time() . "";
     $requestType = "payWithATM";
     //$extraData = ($_POST["extraData"] ? $_POST["extraData"] : "");

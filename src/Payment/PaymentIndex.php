@@ -195,7 +195,8 @@
                 </div>
                 <p class="my-3">Giá: <?php echo number_format($item['price'], 0, ',', '.') . ' đ' ?></p> 
                 <p class="my-3">Số lượng: <?php echo $item['quantity_hidden']; ?></p>  
-                <?php 
+                <?php
+               
                     endforeach; }
                     else {
                         echo "<tr><td colspan=5><h2>Giỏ hàng trống!</h2></td></tr   >";
@@ -208,7 +209,7 @@
                 </div>
                 
                 <input type="hidden" name="total" value="<?php echo $total ;?>">
-
+                <input type="hidden" name="order_id" value="<?php echo $order_id ;?>">
             </div>
             <div class="section">
                 <div class="flex justify-center">
