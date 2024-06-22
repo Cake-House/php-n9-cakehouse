@@ -1,7 +1,7 @@
 <script>
         function confirmDelete(id) {
             if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này không?")) {
-                window.location.href = "modules/quanlysanpham/xuly.php?action=delete&idsanpham=" + id;
+                window.location.href = "modules/quanlysanpham/xuly.php?action=delete&idsanpham=" + id;  
             }
         }
 </script>

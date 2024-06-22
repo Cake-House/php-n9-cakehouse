@@ -56,38 +56,19 @@ if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password']
         if ($count > 0) {
             $row_data = mysqli_fetch_array($row);
             $_SESSION['user'] = $row_data['id'];
-
-            // $getUserCartSQL = "SELECT * FROM tbl_cart WHERE user_id = '$_SESSION[userId]'";
-
-            // $queryCart = mysqli_query($conn, $getUserCartSQL);
-            // $numsOfCart = mysqli_num_rows($queryCart);
-            // if ($numsOfCart > 0) {
-            //     $numsOfCart = mysqli_fetch_array($queryCart);
-            //     setcookie('cartId', $numsOfCart['cart_id'], time() + (365 * 24 * 60 * 60), '/');
-            // } else {
-            //     $userCartId = '';
-
-            //     if (isset($_COOKIE['cartId'])) {
-            //         // Cookie exists
-            //         $userCartId = $_COOKIE['cartId'];
-
-            //         setcookie('cartId', $userCartId, time() + (365 * 24 * 60 * 60), '/');
-
-            //         $createCartSQL = "INSERT INTO tbl_cart(user_id, cart_id) 
-            //         VALUES ('" . $_SESSION['userId'] . "','" . $userCartId . "')";
-            //         mysqli_query($connect, $createCartSQL);
-            //     } else {
-            //         // Cookie does not exist
-            //         $userCartId = generateUuid();
-            //     }
-            // }
-
-            header("Location: ../../index.php");
-        } else {
-            $message = "Tài khoản hoặc mật khẩu không đúng";
-            echo "<script type='text/javascript'>alert('$message');</script>";
-        }
+            // Kiểm tra vai trò của người dùng
+            if ($row_data['role_id'] == 1) { // Giả sử vai trò admin có role_id là 1
+                header("Location: ../../admincp/login.php");
+                exit();
+            } else {
+                header("Location: ../../index.php");
+                exit();
+            }
+    }else {
+        $message = "Tài khoản hoặc mật khẩu không đúng";
+        echo "<script type='text/javascript'>alert('$message');</script>";
     }
+}
 } else if (isset($_POST['signUp'])) {
     $fullname = $_POST['fullname'];
     $password = md5($_POST['password']);
