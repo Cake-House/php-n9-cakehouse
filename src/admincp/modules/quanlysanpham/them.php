@@ -1,17 +1,17 @@
-<table border=1 class="mt-5 ml-5 h-[150px]">
+<table class="mt-5 ml-5 h-[650px]">
     <caption class="text-[30px] font-medium mb-5">Thêm sản phẩm</caption>
     <form
         action="modules/quanlysanpham/xuly.php"
         method="post" enctype="multipart/form-data">
         <tr>
-            <td><label for="id_pro">ID_PRODUCT</label></td>
-            <td><input type="text" name="id_pro">
+            <td><label class="font-semibold" for="id_pro">ID_PRODUCT</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="id_pro">
             </td>
         </tr>
         <tr>
-            <td><label for="name_cate">NAME_CATEGORY</label></td>
+            <td><label class="font-semibold" for="name_cate">NAME_CATEGORY</label></td>
             <td>
-            <select name="danhmuc_role">
+            <select class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" name="danhmuc_role">
             <?php
                 $sql_danhmuc = "SELECT * FROM category";
                 $query_danhmuc = mysqli_query($conn, $sql_danhmuc);
@@ -27,40 +27,40 @@
             </td>
         </tr>
         <tr>
-            <td><label for="">Title</label></td>
-            <td><input type="text" name="title">
+            <td><label class="font-semibold" for="">Title</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="title">
             </td>
         </tr>
         <tr>
-            <td><label for="">Price</label></td>
-            <td><input type="text" name="price">
+            <td><label class="font-semibold" for="">Price</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="price">
             </td>
         </tr>
         <tr>
-            <td><label for="thumbnail">Image</label></td>
+            <td><label class="font-semibold" for="thumbnail">Image</label></td>
             <td>
                 <input type="file" name="hinhanh">
             </td>
         </tr>
         <tr>
-            <td><label for="">Description</label></td>
+            <td><label class="font-semibold" for="">Description</label></td>
             <td>
-                <textarea name="description" cols="30" rows="10">
+                <textarea class="h-[250px] border-cyan-950 border-2 rounded-xl indent-2" name="description" cols="30" rows="10">
                 </textarea>
             </td>
         </tr>
         <tr>
-            <td><label for="">Created_at</label></td>
-            <td><input type="text" name="created_at">
+            <td><label class="font-semibold" for="">Created_at</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="created_at">
             </td>
         </tr>
         <tr>
-            <td><label for="">Updated_at</label></td>
-            <td><input type="text" name="updated_at">
+            <td><label class="font-semibold" for="">Updated_at</label></td>
+            <td><input class="h-[40px] border-cyan-950 border-2 rounded-xl indent-2" type="text" name="updated_at">
             </td>
         </tr>
         <tr>
-            <td class="text-center t-5 w-[50px] bg-gray-400 rounded-2xl"><input type="submit" name="themsanpham" value="Thêm sản phẩm"></td>
+            <td class="font-semibold text-center p-2 h-[40px] w-[50px] bg-gray-400 rounded-2xl"><input type="submit" name="themsanpham" value="Thêm sản phẩm"></td>
         </tr>
     </form>
 </table>

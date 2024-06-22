@@ -14,14 +14,14 @@ $danhmuc_role = $_POST['danhmuc_role'];
 
 if (isset($_POST['suataikhoan'])) {
     if (!empty($_FILES['hinhanh']['name'])) {
-        if (move_uploaded_file($hinhanh_tmp, 'uploads/' . $hinhanh)) {
+        if (move_uploaded_file($hinhanh_tmp, '../../../images/' . $hinhanh)) {
             $sql_update = "UPDATE user SET fullname='$fullname', avatar='$hinhanh', email='$email', phone='$phone', address='$address', password='$password', role_id='$danhmuc_role' WHERE id='$_GET[idtaikhoan]'";
 
             // Delete old image
             $sql = "SELECT * FROM user WHERE id = '$_GET[idtaikhoan]' LIMIT 1";
             $query = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_array($query)) {
-                unlink('uploads/' . $row['avatar']);
+                unlink('../../../images/' . $row['avatar']);
             }
         } else {
             echo "Failed to upload image.";
@@ -51,8 +51,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['idtaik
         $sql_delete = "DELETE FROM user WHERE id='$id'";
         if (mysqli_query($conn, $sql_delete)) {
             // Delete old image
-            if ($old_image && file_exists('uploads/' . $old_image)) {
-                unlink('uploads/' . $old_image);
+            if ($old_image && file_exists('../../../images/' . $old_image)) {
+                unlink('../../../images/' . $old_image);
             }
             header('Location:../../index.php?action=quanlytaikhoan&query=lietke');
         } else {

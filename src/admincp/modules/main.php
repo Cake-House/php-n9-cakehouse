@@ -5,7 +5,7 @@
         ?>
     </div>
     <div class="right">
-        <div class="main_admin">
+    <div class="main_admin">
             <?php
                 if(isset($_GET['action']) && $_GET['query']) {
                     $tam = $_GET['action'];
@@ -41,7 +41,7 @@
                 elseif($tam=='quanlyfeedback' && $query=='lietke'){
                     include("modules/quanlyfeedback/lietke.php");
                 }
-                
+
             ?>
         </div>
     </div>
