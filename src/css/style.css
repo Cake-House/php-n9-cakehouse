@@ -134,3 +134,203 @@ ul.submenu__user li:hover{
 }
 
 .show {display: block;}
+
+/* css của product-detail */
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.product {
+  display: flex;
+  gap: 40px;
+}
+
+.product-details {
+  max-width: 50%;
+}
+
+.product-details h1 {
+  font-size: 27px;
+  margin: 0;
+}
+
+.product-details img {
+  width: 400px;
+  height: 400px;
+  margin: 10px 0;
+}
+
+.product-details .price {
+  color: red;
+  font-size: 24px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.product-details .size {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.description {
+  margin: auto;
+}
+
+.description p {
+  margin-top: 20px;
+}
+
+.additional {
+  justify-content: center;
+  margin: auto;
+}
+
+.additional-info {
+  margin: 20px 0;
+  max-width: 1200px;
+}
+
+.additional-info h2 {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: brown;
+  padding-bottom: 10px;
+}
+
+.cart {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart input {
+  width: 40px;
+  text-align: center;
+}
+
+.cart button {
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.cart button:hover {
+  background-color: #003d80;
+}
+
+/* css của view cart */
+.cart-container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.cart-header a {
+  text-decoration: none;
+  color: red;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cart-table th,
+.cart-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.cart-table th {
+  background-color: #f2f2f2;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.cart-actions button {
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-actions button:hover {
+  background-color: darkred;
+}
+
+.total {
+  text-align: right;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* css của user-info */
+/* .userinfo__form input[type="text"], input[type="email"]{
+  width: 480px;
+  height: 40px;
+  border: 1px solid #424242;
+  margin: 10px 0;
+  text-indent: 0.75rem;
+  border-radius: 10px;
+}
+
+textarea {
+  border: solid 1px #424242;
+  margin: 10px 0;
+  text-indent: 0.75rem;
+}
+
+.__left {
+  padding: 20px 30px;
+  border-right: 2px solid #e8e8e8;
+}
+
+.__left ul h2 {
+  padding: 10px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.__right p {
+  padding: 10px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+ul.sidebar__user li {
+  padding: 0px 15px;
+  display: block;
+}
+
+ul.sidebar__user li a{
+  padding: 10px 0;
+  border-top: 1px solid #e8e8e8;
+  display: block;
+}
+
+
+ul.sidebar__user li:hover{
+  background-color: #fffdf2;
+  color: #ee2c2e;
+} */

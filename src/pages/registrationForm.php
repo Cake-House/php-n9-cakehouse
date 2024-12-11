@@ -1,50 +1,12 @@
 <?php
 session_start();
-include("../../admincp/config/connect.php");
-
-function generateUuid()
-{
-    $data = random_bytes(16);
-
-    $data[6] = chr(ord($data[6]) & 0x0F | 0x40);
-    $data[8] = chr(ord($data[8]) & 0x3F | 0x80);
-
-    $uuid = vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
-
-    return $uuid;
-}
-
-function generateCode()
-{
-    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $code = '';
-
-    for ($i = 0; $i < 8; $i++) {
-        $code .= $characters[rand(0, strlen($characters) - 1)];
-    }
-
-    return $code;
-}
-
-// include('../../common/config/connect.php');
-
-// //Handle login with google
-// include('../../common/GoogleLogin.php');
-
-
-// //Handle login with fb
-// include('../../common/facebook_source.php');
+include("../admincp/config/connect.php");
 
 $username = '';
 $password  = '';
 
 if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST['email'];
-
-    // if ($username == 'admin') {
-    //     header("Location: ../../admin/adminCommon/login.php");
-    // }
-
     $password = md5($_POST['password']);
 
     if ($email != '' && $password != '') {
@@ -58,10 +20,10 @@ if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password']
             $_SESSION['user'] = $row_data['id'];
             // Kiểm tra vai trò của người dùng
             if ($row_data['role_id'] == 1) { // Giả sử vai trò admin có role_id là 1
-                header("Location: ../../admincp/login.php");
+                header("Location: ../admincp/login.php");
                 exit();
             } else {
-                header("Location: ../../index.php");
+                header("Location: ../index.php");
                 exit();
             }
     }else {
@@ -86,9 +48,8 @@ if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password']
     } else if ($passwordConfirmation != $password) {
         echo '<script>alert("Xác nhận mật khẩu không chính xác!")</script>';
     } else {
-        $userId =  generateUuid();
-        $createUser = "INSERT INTO user(id, fullname, email, phone, password) 
-            VALUES ('$userId', '$fullname','$email', '$phone', '$password')";
+        $createUser = "INSERT INTO user(fullname, email, phone, password, role_id) 
+            VALUES ('$fullname','$email', '$phone', '$password', 5)";
         $res = mysqli_query($conn, $createUser);
 
         if ($res) {
@@ -106,46 +67,25 @@ if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password']
     <title>Cake_House</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="./images/logo.svg">
+    <link rel="icon" href="./images/1.jpg">
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css'>
-    <link rel="stylesheet" href="../styles/UserLoginAndSignup.css">
+    <link rel="stylesheet" href="../css/registrationForm.css">
 
 </head>
 
 <body>
-    <a href="UserIndex.php">
-        <img src="./images/logo.svg" alt="" style="width: 120px;position: absolute; top: 20px ; right: 10px">
-    </a>
-
-    <a href="../../index.html" class="p-2 bg-white" style="border-radius: 10px; position: absolute;top: 35px;left:10px;font-weight: bold;">
+    <a href="../index.html" class="p-2 bg-white" style="border-radius: 10px; position: absolute;top: 35px;left:10px;font-weight: bold;">
         <i class="fa-solid fa-circle-chevron-left"></i>
         Về trang chủ
     </a>
-    <!-- <div class="ocean">
-        <div class="wave"></div>
-        <div class="wave"></div>
-    </div> -->
-    <!-- Log In Form Section -->
 
     <section>
         <div class="container" id="container">
             <div class="form-container sign-up-container">
                 <form name="signUp" action="" method="POST">
                     <h1>Đăng ký</h1>
-                    <!-- <div class="social-container">
-                        login with fb 
-                        <?php if (isset($loginUrl)) { ?>
-                            <a href="<?php echo $loginUrl; ?>" target="_blank" class="social"><i class="fab fa-facebook"></i></a>
-                        <?php } ?>
-
-                        login with google 
-                        <?php if (isset($authUrl)) { ?>
-                            <a href="<?php echo $authUrl; ?>" target="_blank" class="social"><i class="fab fa-google"></i></a>
-                        <?php } ?>
-                    </div>
-                    <span>Tạo tài khoản mới</span> -->
                     <label>
                         <input required name="fullname" type="text" placeholder="Họ tên" />
                     </label>
@@ -168,19 +108,6 @@ if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password']
             <div class="form-container sign-in-container">
                 <form name="login" action="" method="POST">
                     <h1 class="mb-3">Đăng nhập</h1>
-                    <!-- <div class="social-container">
-                        login with fb 
-                        <?php if (isset($loginUrl)) { ?>
-                            <a href="<?php echo $loginUrl; ?>" target="_blank" class="social"><i class="fab fa-facebook"></i></a>
-                        <?php } ?>
-
-                        login with google 
-                        <?php if (isset($authUrl)) { ?>
-                            <a href="<?php echo $authUrl; ?>" target="_blank" class="social"><i class="fab fa-google"></i></a>
-                        <?php } ?>
-
-                    </div>
-                    <span> Hoặc đăng nhập bằng tài khoản sẵn có</span> -->
                     <label>
                         <input required name="email" type="text" placeholder="Email" />
                     </label>

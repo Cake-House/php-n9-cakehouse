@@ -1,6 +1,3 @@
-<?php
- 
-?>
 <div class="header flex w-full">
   <div class="h-[70px] flex justify-between px-6 header__inner">
     <div class="left flex items-center">
@@ -58,10 +55,10 @@
       </div>
     </div>
     <div class="flex items-center justify-between gap-5 right">
-      <a href="./user/userCommon/UserLoginSignUp.php">
+      <a href="./pages/registrationForm.php">
         <input class="w-[110px] h-10 rounded-3xl border-2 border-red-500 text-red-500 font-semibold cursor-pointer" type="button" value="Đăng nhập">
       </a>
-      <a href="./user/userCommon/UserLoginSignUp.php">
+      <a href="./pages/registrationForm.php">
         <input class="w-[110px] h-10 rounded-3xl bg-[#ED2224] text-white font-semibold cursor-pointer" type="button" value="Đăng ký">
       </a>
     </div>

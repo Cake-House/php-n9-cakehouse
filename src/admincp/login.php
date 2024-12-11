@@ -7,7 +7,7 @@ if (isset($_POST['nhap'])) {
     $matkhau = md5($_POST['pass']);
 
     // Prepare and execute the SQL statement
-    $sql_ngdung = "SELECT user.id, user.fullname FROM user WHERE (user.phone = ? AND user.password = ? AND user.role_id = 1) LIMIT 1";
+    $sql_ngdung = "SELECT user.id, user.fullname FROM user WHERE (user.email = ? AND user.password = ? AND user.role_id = 1) LIMIT 1";
     $stmt = mysqli_prepare($conn, $sql_ngdung);
     mysqli_stmt_bind_param($stmt, "ss", $taikhoan, $matkhau);
     mysqli_stmt_execute($stmt);
@@ -52,7 +52,7 @@ if (isset($_POST['nhap'])) {
                 action="" method="post">
                 <p class="text-2xl text-center font-medium text-[#EE799F]">Admin Login</p>
                 <div class="mt-5">
-                    <label class="text-[#8B475D] font-semibold" for="name">Email/Phone</label>
+                    <label class="text-[#8B475D] font-semibold" for="name">Email</label>
                     <div class="mt-1">
                         <input class="w-[280px] h-[40px] rounded-lg indent-3" type="text" name="name"
                             placeholder="Nhập tên đăng nhập" required>
