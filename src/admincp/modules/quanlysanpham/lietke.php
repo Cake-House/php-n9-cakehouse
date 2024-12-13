@@ -31,11 +31,46 @@
         text-decoration: none;
 
     }
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #d3ced2;
+  }
+
+  th {
+    background-color: #f4f4f4;
+  }
+
+  @media (max-width: 768px) {
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    th, td {
+      font-size: 14px;
+    }
+
+    ul.list_page li {
+      padding: 2px 8px;
+    }
+  }
 </style>
 <div class="flex-row">
     <table class="mt-5 ml-5 h-auto">
         <caption class="text-[30px] font-medium mb-5">Quản lý sản phẩm</caption>
-        <tr><td colspan="10" class="h-[60px] text-right"><a class="p-2 font-bold text-gray-700 bg-gray-400 rounded-2xl" href="index.php?action=quanlysanpham&query=them">Thêm sản phẩm</a></td></tr>
+        <tr>
+          <td colspan="10" class="h-[60px] text-left">
+            <a class="p-2 font-bold text-gray-700 bg-gray-400 rounded-2xl" href="index.php?action=quanlysanpham&query=them">Thêm sản phẩm</a>
+          </td>
+        </tr>
         <tr class="border-2">
             <th class="w-[50px] text-center border-2">PRODUCT</th>
             <th class="w-[90px] text-center border-2">CATEGORY</th>
@@ -58,12 +93,12 @@
             $begin = 0;
           }
           else {
-            $begin = ($trang - 1) * 6;
+            $begin = ($trang - 1) * 5;
           }
           $query_cnt = mysqli_query($conn, "SELECT * FROM product");
           $row_cnt = mysqli_num_rows($query_cnt);
-          $page_product = ceil($row_cnt/6);
-        $sql_lietke_sanpham = "SELECT product.id, product.category_id, product.title, product.price, product.thumbnail, product.description, product.created_at, product.updated_at FROM product INNER JOIN category ON product.category_id = category.id ORDER BY product.id LIMIT $begin,6";
+          $page_product = ceil($row_cnt/5);
+        $sql_lietke_sanpham = "SELECT product.id, product.category_id, product.title, product.price, product.thumbnail, product.description, product.created_at, product.updated_at FROM product INNER JOIN category ON product.category_id = category.id ORDER BY product.id LIMIT $begin,5";
         $query_lietke_sanpham = mysqli_query($conn, $sql_lietke_sanpham);
         while ($row = mysqli_fetch_array($query_lietke_sanpham)) {
             ?>

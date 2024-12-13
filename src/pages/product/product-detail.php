@@ -18,7 +18,7 @@
         $related_query = mysqli_query($conn, $get_related_prod);
         $related_row = mysqli_fetch_array($related_query);
     ?>
-    <div class="banner w-full">
+    <div class="banner w-full mt-[70px]">
         <img src="https://origato.com.vn/wp-content/themes/3btheme/lib/images/bg-ar.png" alt="">
     </div>
     <div class="container">

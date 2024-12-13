@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content mt-[70px]">
   <div>
     <img src="https://origato.com.vn/wp-content/themes/3btheme/lib/images/bg-ar.png" alt="">
   </div>

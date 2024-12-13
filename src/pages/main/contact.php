@@ -29,7 +29,7 @@
   </style>
 </head>
 <body>
-  <div class="contact py-5 px-10 flex justify-between">
+  <div class="contact py-5 px-10 flex justify-between mt-[70px]">
     <div class="__left p-10"> 
       <div class="">
         <p class="text-xl text-[#7a8726]"><i class="fa-regular fa-paper-plane"></i> Để lại lời nhắn</p>

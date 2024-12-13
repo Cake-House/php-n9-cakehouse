@@ -48,7 +48,7 @@ $sql_category = "SELECT * FROM category ";
 $query_category =mysqli_query($conn,$sql_category);
 ?>
 
-<div class="content w-full">
+<div class="content w-full mt-[70px]">
   <!-- Bento cake -->
   <div>
       <img src="https://origato.com.vn/wp-content/themes/3btheme/lib/images/bg-ar.png" alt="">

@@ -64,7 +64,7 @@
   
 ?>
 <body>
-  <div class="h-[640px] py-5 px-10 flex justify-start">
+  <div class="h-[640px] py-5 px-10 flex justify-start mt-[70px]">
     <div class="__left">
       <ul class="w-[240px] sidebar__user">
         <h2 class="uppercase font-semibold rounded-t-md p-3 text-xl text-center">danh mục</h2>

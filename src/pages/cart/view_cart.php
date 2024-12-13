@@ -32,7 +32,7 @@
     ?>
     
     <div class="cart-container">
-        <div class="breadcrumb__container">
+        <div class="breadcrumb__container mt-[70px]">
             <div class="breadcrumb flex list-none py-4">
                 <span class="font-medium">
                     <a href="src/index.php?page=home"><i class="fa-solid fa-house"></i> Trang chủ <i

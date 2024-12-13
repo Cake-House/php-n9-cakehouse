@@ -6,11 +6,9 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="../css/style.css">
-  
 </head>
 <body>
   <?php
-
     $sql_category1="SELECT * FROM category WHERE id<13";
     $query_category1=mysqli_query($conn,$sql_category1);   
     $sql_category2="SELECT * FROM category WHERE id>12";
@@ -21,8 +19,8 @@
     $info = mysqli_fetch_array($query_info);
   ?>
 
-  <div class="header flex w-full">
-    <div class="h-[70px] flex justify-between px-6 header__inner">
+  <div class="header flex w-full fixed z-10">
+    <div class="w-full h-[70px] flex justify-between px-6 header__inner">
       <div class="left flex items-center">
         <a href="index.html">
           <img class="logo_header max-w-[200px] max-h-[70px] ml-10 mr-12" 
@@ -86,6 +84,7 @@
           <ul id="submenu_user" class="submenu__user list-none shadow-lg w-[200px] top-[60px] rounded-b-md">
             <li><a href="index.php?page=user-info&id=<?php echo $id ?>"><i class="fa-regular fa-address-book"></i> Thông tin cá nhân</a></li>
             <li><a href="index.php?page=user-account&id=<?php echo $id ?>"><i class="fa-solid fa-shield-halved"></i> Tài khoản & bảo mật</a></li>
+            <li><a href="index.php?page=myorder"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng của bạn</a></li>
             <li><a href="./pages/account/logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</a></li>
           </ul>
         </div>

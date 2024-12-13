@@ -19,7 +19,7 @@ if (isset($_POST['nhap'])) {
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['fullname'] = $row['fullname'];
         $_SESSION['dangnhap'] = $taikhoan;
-        header("Location: index.php");
+        header("Location: index.php?action=quanlytaikhoan&query=lietke");
     } else {
         $message = "Lỗi! Tài khoản hoặc mật khẩu không đúng";
         echo "<script type='text/javascript'>alert('$message');</script>";

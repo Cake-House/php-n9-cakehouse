@@ -1,5 +1,5 @@
-<div class="header flex w-full">
-  <div class="h-[70px] flex justify-between px-6 header__inner">
+<div class="header flex w-full fixed z-10">
+  <div class="w-full h-[70px] flex justify-between px-6 header__inner">
     <div class="left flex items-center">
       <a href="index.html">
         <img class="logo_header max-w-[200px] max-h-[70px] ml-10 mr-12" 
@@ -12,7 +12,7 @@
           <a href="about.html">VỀ THE CAKE HOUSE</a>
         </li>
         <li class="p-[23px] cursor-pointer">
-          <a href="">BÁNH SINH NHẬT <i class="fa fa-caret-down"></i></a>
+          <a href="index.php?page=category&id=10">BÁNH SINH NHẬT <i class="fa fa-caret-down"></i></a>
           <ul class="sub__menu list-none shadow-lg">
            <?php          
            $sql_danhmuc1= "SELECT * FROM category WHERE id<13";
@@ -29,7 +29,7 @@
           </ul>
         </li>
         <li class="p-[23px] cursor-pointer">
-          <a href="">SẢN PHẨM KHÁC <i class="fa fa-caret-down"></i></a>
+          <a href="index.php?page=category&id=13">SẢN PHẨM KHÁC <i class="fa fa-caret-down"></i></a>
           <ul class="sub__menu list-none shadow-lg">
           <?php          
            $sql_danhmuc2= "SELECT * FROM category WHERE id>12 ";
@@ -50,9 +50,11 @@
         </li>
       </ul>
       <div class="flex p-[23px]">
-        <input class="border-solid border-2 border-red-400 rounded-2xl indent-4" 
-          type="text" name="search" id="search" placeholder="Tìm kiếm...">
-      </div>
+          <form autocomplete="off" action="index.php?" id="search_form" method="get">
+            <input class="border-solid border-2 border-red-400 rounded-2xl indent-4" 
+            type="text" name="search_key" onfocus="" id="search" placeholder="Tìm kiếm...">
+          </form>
+        </div>
     </div>
     <div class="flex items-center justify-between gap-5 right">
       <a href="./pages/registrationForm.php">
@@ -64,3 +66,12 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.getElementById("search_key").addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) { // Enter key
+      event.preventDefault();
+      document.getElementById("search_form").submit();
+    }
+  }); 
+</script>

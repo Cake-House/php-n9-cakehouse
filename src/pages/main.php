@@ -54,6 +54,9 @@
       else if($check == true){
         include("pages/main/search.php");
       }
+      else if($page =='myorder'){
+        include("pages/orders/my-order.php");
+      }
       else {
         include("pages/main/index.php");
       }

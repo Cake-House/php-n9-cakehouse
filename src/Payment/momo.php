@@ -1,17 +1,50 @@
 <?php
+session_start();
 include "../admincp/config/Connect.php";
 
-$fullname = $_POST['name'];
-$address = $_POST['address'];
-$phone = $_POST['phone'];
-//$email = $_POST['email'];
-$note = $_POST['note'];
-$order_id = $_POST['order_id'];
-$amount = $_POST['total'];
-date_default_timezone_set('Asia/Ho_Chi_Minh');
+if (isset($_POST['cod']) ) {
+    $user_id = isset($_SESSION['user']) ? $_SESSION['user'] : null;
+    $fullname = $_POST['name'];
+    $total = $_POST['total'];
+    $address = $_POST['address'];
+    $phone = $_POST['phone'];
+    $note = $_POST['note'];
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
     $currentTime = date("Y-m-d H:i:s");
-$sql_order = "INSERT INTO orders (fullname, phone, content, address, order_date, total, status) VALUES ('$fullname','$phone','$note','$address','$currentTime','$amount', 'Đang chuẩn bị')";
-$query_order = mysqli_query($conn, $sql_order) or die("Couldn't connect");
+    $status = 'pending'; // Trạng thái mặc định
+
+    if ($user_id) {
+        $insertOrderSQL = "INSERT INTO orders (user_id, fullname, total, address, phone, content, order_date, status) 
+                           VALUES ('$user_id', '$fullname','$total', '$address', '$phone', '$note', '$currentTime', '$status')";
+
+        if (mysqli_query($conn, $insertOrderSQL)) {
+            echo '<script>alert("Đặt hàng thành công! Cảm ơn bạn đã tin tưởng chúng tôi.");</script>';
+            header("Location:../index.php?page=paymentdone");
+            exit();
+        } else {
+            echo '<script>alert("Đặt hàng thất bại. Vui lòng thử lại sau.");</script>';
+            header("Location: payment.php");
+            exit();
+        }
+        
+    } else {
+        echo '<script>alert("Bạn cần đăng nhập trước khi thanh toán!");</script>';
+        header("Location: ../pages/registrationForm.php");
+        exit();
+    }
+    
+}
+// $fullname = $_POST['name'];
+// $address = $_POST['address'];
+// $phone = $_POST['phone'];
+// //$email = $_POST['email'];
+// $note = $_POST['note'];
+// $order_id = $_POST['order_id'];
+// $amount = $_POST['total'];
+// date_default_timezone_set('Asia/Ho_Chi_Minh');
+//     $currentTime = date("Y-m-d H:i:s");
+// $sql_order = "INSERT INTO orders (fullname, phone, content, address, order_date, total, status) VALUES ('$fullname','$phone','$note','$address','$currentTime','$amount', 'Đang chuẩn bị')";
+// $query_order = mysqli_query($conn, $sql_order) or die("Couldn't connect");
 
 function execPostRequest($url, $data)
 {
@@ -45,9 +78,6 @@ $orderId = time() . "";
 $redirectUrl = "http://localhost:8088/php-n9-cakehouse/src/index.php?page=paymentdone";
 $ipnUrl = "http://localhost:8088/php-n9-cakehouse/src/index.php?page=paymentdone";
 $extraData = "";
-
-
-
     $partnerCode = $partnerCode;
     $accessKey = $accessKey ;
     $serectkey = $secretKey;

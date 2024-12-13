@@ -18,6 +18,7 @@ if (isset($_POST['login']) && isset($_POST['email']) && isset($_POST['password']
         if ($count > 0) {
             $row_data = mysqli_fetch_array($row);
             $_SESSION['user'] = $row_data['id'];
+            $_SESSION['role_id'] = $row_data['role_id'];
             // Kiểm tra vai trò của người dùng
             if ($row_data['role_id'] == 1) { // Giả sử vai trò admin có role_id là 1
                 header("Location: ../admincp/login.php");
